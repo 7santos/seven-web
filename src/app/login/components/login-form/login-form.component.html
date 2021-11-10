@@ -1,0 +1,33 @@
+<form [formGroup]="formGroup" novalidate>
+  <mat-grid-list cols="1" rowHeight="75">
+    <mat-grid-tile>
+      <mat-form-field class="input-width">
+        <input
+          matInput
+          placeholder="{{ 'login.email' | translate }}"
+          formControlName="email"
+        />
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field class="input-width">
+        <input
+          type="password"
+          matInput
+          placeholder="{{ 'login.password' | translate }}"
+          formControlName="password"
+        />
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="formGroup.invalid"
+        (click)="signIn()"
+      >
+        {{ "button.signIn" | translate }}
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

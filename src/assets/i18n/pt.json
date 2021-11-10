@@ -1,0 +1,22 @@
+{
+  "app": {
+    "title": "Seven Santos",
+    "logout": "Sair",
+    "menu": {
+      "tooltip": "Menu",
+      "home": "Home"
+    },
+    "offline": "Offline"
+  },
+  "home": {
+    "title": "Home"
+  },
+  "login": {
+    "title": "Login",
+    "email": "E-mail",
+    "password": "Senha"
+  },
+  "button": {
+    "signIn": "Entrar"
+  }
+}
