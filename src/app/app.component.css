@@ -2,7 +2,7 @@
   flex: 1 1 auto;
 }
 
-::ng-deep .mat-snack-bar-container.success {
+/*::ng-deep .mat-snack-bar-container.success {
   background: green;
   color: black;
 }
@@ -14,7 +14,7 @@
 
 ::ng-deep .mat-simple-snackbar-action {
   color: black;
-}
+}*/
 
 .logo {
   width: 50px;
