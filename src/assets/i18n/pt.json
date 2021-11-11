@@ -4,7 +4,8 @@
     "logout": "Sair",
     "menu": {
       "tooltip": "Menu",
-      "home": "Home"
+      "home": "Home",
+      "facebook": "Facebook"
     },
     "offline": "Offline"
   },

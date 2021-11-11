@@ -11,6 +11,11 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'facebook',
+    loadChildren: () =>
+      import('./facebook/facebook.module').then((m) => m.FacebookModule),
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
