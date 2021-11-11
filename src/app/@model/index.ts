@@ -1,3 +1,4 @@
+export * from './enum/role';
 export * from './enum/social-provider';
 
 export * from './facebook/facebook-login';

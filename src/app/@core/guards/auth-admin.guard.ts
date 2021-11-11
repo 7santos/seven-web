@@ -6,13 +6,13 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { TokenStorageService } from '@service';
+import { PermissionService } from '@service';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthAdminGuard implements CanActivate {
   constructor(
-    private tokenStorageService: TokenStorageService,
+    private permissionService: PermissionService,
     private router: Router
   ) {}
 
@@ -24,7 +24,7 @@ export class AuthAdminGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.tokenStorageService.exist()) {
+    if (this.permissionService.isAdmin()) {
       return true;
     }
 

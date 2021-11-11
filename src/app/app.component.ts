@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
-import { JwtPayload } from '@model';
 import { TranslateService } from '@ngx-translate/core';
-import { AppService, TokenStorageService } from '@service';
-import * as jwt_decode from 'jwt-decode';
+import { AppService, PermissionService } from '@service';
 import { AppConstants } from 'src/app/app-constants';
 
 @Component({
@@ -20,7 +18,7 @@ export class AppComponent implements OnInit {
   constructor(
     public translate: TranslateService,
     private appService: AppService,
-    private tokenStorageService: TokenStorageService,
+    private permissionService: PermissionService,
     private router: Router
   ) {
     translate.addLangs([AppConstants.DEFAULT_LANG]);
@@ -33,27 +31,16 @@ export class AppComponent implements OnInit {
 
   logOut(): void {
     this.sidenav.close();
-    this.tokenStorageService.remove();
+    this.permissionService.clearToken();
     this.router.navigate(['/']);
   }
 
   isAuthenticated(): boolean {
-    return this.tokenStorageService.exist();
+    return this.permissionService.isLoggedIn();
   }
 
   getUsername(): string {
-    if (!this.isAuthenticated) {
-      return '';
-    }
-
-    const token: JwtPayload = jwt_decode.default(
-      this.tokenStorageService.get()
-    );
-
-    if (token && token.name) {
-      return token.name;
-    }
-
-    return '';
+    const payload = this.permissionService.getPayload();
+    return payload?.name ? payload.name : '';
   }
 }

@@ -5,7 +5,7 @@ import {
   AppService,
   AuthService,
   ToastService,
-  TokenStorageService,
+  PermissionService,
 } from '@service';
 
 @Component({
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     private activatedRoute: ActivatedRoute,
     private appService: AppService,
     private authService: AuthService,
-    private tokenStorageService: TokenStorageService,
+    private permissionService: PermissionService,
     private router: Router,
     private toastService: ToastService
   ) {}
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     const token = this.activatedRoute.snapshot.queryParamMap.get('token');
     const error = this.activatedRoute.snapshot.queryParamMap.get('error');
 
-    if (this.tokenStorageService.exist()) {
+    if (this.permissionService.isLoggedIn()) {
       this.router.navigate(['/home']);
     } else if (token) {
       this.afterSignIn(token);
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   private afterSignIn(accessToken: string): void {
-    this.tokenStorageService.set(accessToken);
+    this.permissionService.storeToken(accessToken);
     this.router.navigate(['/home']);
   }
 }
