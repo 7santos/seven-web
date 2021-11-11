@@ -6,19 +6,24 @@
       <mat-icon
         (click)="sidenav.toggle()"
         matTooltip="{{ 'app.menu.tooltip' | translate }}"
+        color="accent"
         >menu</mat-icon
       >
     </button>
     <button mat-icon-button *ngIf="!isAuthenticated()">
-      <mat-icon matTooltip="{{ 'app.offline' | translate }}"
+      <mat-icon matTooltip="{{ 'app.offline' | translate }}" color="accent"
         >offline_bolt</mat-icon
       >
     </button>
     <span>{{ title }}</span>
     <span class="toolbar-spacer"></span>
-    <span *ngIf="isAuthenticated()">{{ username }}</span>
+    <span *ngIf="isAuthenticated()">{{ getUsername() }}</span>
     <button mat-icon-button *ngIf="isAuthenticated()">
-      <mat-icon (click)="logOut()" matTooltip="{{ 'app.logout' | translate }}">
+      <mat-icon
+        (click)="logOut()"
+        matTooltip="{{ 'app.logout' | translate }}"
+        color="accent"
+      >
         exit_to_app
       </mat-icon>
     </button>

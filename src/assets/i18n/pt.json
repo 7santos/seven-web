@@ -14,7 +14,8 @@
   "login": {
     "title": "Login",
     "email": "E-mail",
-    "password": "Senha"
+    "password": "Senha",
+    "loginWithGoogle": "Entrar com o Google"
   },
   "button": {
     "signIn": "Entrar"

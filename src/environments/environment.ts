@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   apiUri: 'http://localhost:8069/eru/',
+  oauth2AuthorizationPath: 'oauth2/authorization/',
+  redirectUri: 'http://localhost:4200/login',
 };
 
 /*

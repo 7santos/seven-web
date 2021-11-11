@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  apiUri: 'https://domain-api.com/',
+  apiUri: 'apiUri',
+  oauth2AuthorizationPath: 'oauth2AuthorizationPath',
+  redirectUri: 'redirectUri',
 };

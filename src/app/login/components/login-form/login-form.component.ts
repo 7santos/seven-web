@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Login } from '@model';
 
@@ -9,6 +9,8 @@ import { Login } from '@model';
 })
 export class LoginFormComponent implements OnInit {
   formGroup: FormGroup;
+
+  @Input() googleLoginUrl: string = '';
 
   @Output() signInEvent: EventEmitter<Login> = new EventEmitter<Login>();
 

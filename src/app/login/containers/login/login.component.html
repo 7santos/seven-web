@@ -1,1 +1,4 @@
-<app-login-form (signInEvent)="signIn($event)"></app-login-form>
+<app-login-form
+  (signInEvent)="signIn($event)"
+  [googleLoginUrl]="googleLoginUrl"
+></app-login-form>

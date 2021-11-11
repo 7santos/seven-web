@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { JwtPayload } from '@model';
 import { TranslateService } from '@ngx-translate/core';
 import { AppService, TokenStorageService } from '@service';
+import * as jwt_decode from 'jwt-decode';
 import { AppConstants } from 'src/app/app-constants';
 
 @Component({
@@ -12,8 +14,6 @@ import { AppConstants } from 'src/app/app-constants';
 })
 export class AppComponent implements OnInit {
   title: string = '';
-
-  username: string = '';
 
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
@@ -29,10 +29,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.appService.getTitle().subscribe((appTitle) => (this.title = appTitle));
-
-    this.appService
-      .getJwtPayload()
-      .subscribe((jwtPayload) => (this.username = jwtPayload.name));
   }
 
   logOut(): void {
@@ -43,5 +39,21 @@ export class AppComponent implements OnInit {
 
   isAuthenticated(): boolean {
     return this.tokenStorageService.exist();
+  }
+
+  getUsername(): string {
+    if (!this.isAuthenticated) {
+      return '';
+    }
+
+    const token: JwtPayload = jwt_decode.default(
+      this.tokenStorageService.get()
+    );
+
+    if (token && token.name) {
+      return token.name;
+    }
+
+    return '';
   }
 }

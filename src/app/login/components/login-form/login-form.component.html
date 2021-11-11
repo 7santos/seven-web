@@ -22,12 +22,22 @@
     <mat-grid-tile>
       <button
         mat-raised-button
-        color="primary"
+        color="accent"
         [disabled]="formGroup.invalid"
         (click)="signIn()"
       >
         {{ "button.signIn" | translate }}
       </button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <a href="{{ googleLoginUrl }}">
+        <img
+          alt="{{ 'login.loginWithGoogle' | translate }}"
+          src="assets/images/google.png"
+          class="social-provider-logo"
+          matTooltip="{{ 'login.loginWithGoogle' | translate }}"
+        />
+      </a>
     </mat-grid-tile>
   </mat-grid-list>
 </form>
