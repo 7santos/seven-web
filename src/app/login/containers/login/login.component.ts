@@ -23,6 +23,7 @@ export class LoginComponent implements AfterViewInit {
   signIn(login: Login): void {
     this.authService.signIn(login).subscribe((data) => {
       this.tokenStorageService.set(data.accessToken);
+      this.appService.setJwtPayload(data.accessToken);
       this.router.navigate(['/home']);
     });
   }
