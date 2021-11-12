@@ -1,11 +1,11 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Login } from '@model';
 import {
   AppService,
   AuthService,
-  ToastService,
   PermissionService,
+  ToastService,
 } from '@service';
 
 @Component({
@@ -14,43 +14,41 @@ import {
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit, AfterViewInit {
-  googleLoginUrl: string = '';
+  googleLoginUrl: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private appService: AppService,
     private authService: AuthService,
     private permissionService: PermissionService,
-    private router: Router,
     private toastService: ToastService
-  ) {}
+  ) {
+    this.googleLoginUrl = this.authService.getGoogleLoginUrl();
+  }
 
   ngOnInit(): void {
-    this.googleLoginUrl = this.authService.getGoogleLoginUrl();
-    const token = this.activatedRoute.snapshot.queryParamMap.get('token');
-    const error = this.activatedRoute.snapshot.queryParamMap.get('error');
-
-    if (this.permissionService.isLoggedIn()) {
-      this.router.navigate(['/home']);
-    } else if (token) {
-      this.afterSignIn(token);
-    } else if (error) {
-      this.toastService.showError(error);
-    }
+    this.activatedRoute.queryParams.subscribe((params) =>
+      this.checkToken(params)
+    );
   }
 
   ngAfterViewInit(): void {
     this.appService.setTitle('login.title');
   }
 
-  signIn(login: Login): void {
-    this.authService.signIn(login).subscribe((data) => {
-      this.afterSignIn(data.accessToken);
-    });
+  checkToken(params: Params): void {
+    if (this.permissionService.isLoggedIn()) {
+      this.permissionService.storeToken(null);
+    } else if (params['token']) {
+      this.permissionService.storeToken(params['token']);
+    } else if (params['error']) {
+      this.toastService.showError(params['error']);
+    }
   }
 
-  private afterSignIn(accessToken: string): void {
-    this.permissionService.storeToken(accessToken);
-    this.router.navigate(['/home']);
+  signIn(login: Login): void {
+    this.authService.signIn(login).subscribe((data) => {
+      this.permissionService.storeToken(data.accessToken);
+    });
   }
 }

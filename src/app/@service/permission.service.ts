@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
-import { JwtPayload, Role } from '@model';
-import { TokenStorageService } from '@service';
+import { Router } from '@angular/router';
+import { JwtPayload, Permission, Role } from '@model';
+import { AppService, TokenStorageService } from '@service';
 import * as jwt_decode from 'jwt-decode';
 
 @Injectable({ providedIn: 'root' })
 export class PermissionService {
-  constructor(private tokenStorageService: TokenStorageService) {}
+  constructor(
+    private tokenStorageService: TokenStorageService,
+    private router: Router,
+    private appService: AppService
+  ) {}
 
   isLoggedIn(): boolean {
     return this.tokenStorageService.exist();
@@ -19,12 +24,22 @@ export class PermissionService {
     return this.hasRole(Role.ROLE_USER);
   }
 
-  storeToken(token: string): void {
-    this.tokenStorageService.set(token);
+  storeToken(token: string | null): void {
+    if (token) {
+      this.tokenStorageService.set(token);
+    }
+
+    this.appService.setPermission(
+      new Permission(true, this.isAdmin(), this.isUser(), this.getUserName())
+    );
+
+    this.router.navigate(['/home']);
   }
 
   clearToken(): void {
     this.tokenStorageService.remove();
+    this.appService.setPermission(new Permission(false, false, false, ''));
+    this.router.navigate(['/']);
   }
 
   getPayload(): JwtPayload | null {
@@ -41,6 +56,11 @@ export class PermissionService {
     }
 
     return this.tokenStorageService.get();
+  }
+
+  getUserName(): string {
+    const payload = this.getPayload();
+    return payload?.name ? payload.name : '';
   }
 
   private hasRole(role: Role): boolean {

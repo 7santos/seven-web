@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Permission } from '@model';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -7,6 +8,12 @@ export class AppService {
   private title = new BehaviorSubject<string>('');
 
   private title$ = this.title.asObservable();
+
+  private permission = new BehaviorSubject<Permission>(
+    new Permission(false, false, false, '')
+  );
+
+  private permission$ = this.permission.asObservable();
 
   constructor(private translateService: TranslateService) {}
 
@@ -18,5 +25,15 @@ export class AppService {
 
   getTitle(): Observable<string> {
     return this.title$;
+  }
+
+  setPermission(permission: Permission): void {
+    setTimeout(() => {
+      this.permission.next(permission);
+    }, 0);
+  }
+
+  getPermission(): Observable<Permission> {
+    return this.permission$;
   }
 }

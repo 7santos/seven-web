@@ -1,5 +1,3 @@
-- Adicionar validação dos roles nos guards
-- Criar serviço que valida se o usuário está logado e se tem acesso aos roles
 - Criar favicon
 - Mudar o tipo de letra
 - Colocar validação de regex nos campos de email e senha do login

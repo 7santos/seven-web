@@ -2,7 +2,7 @@
   <mat-toolbar-row>
     <img src="assets/images/logo.png" class="logo" />
     <span translate>app.title</span>
-    <button mat-icon-button *ngIf="isAuthenticated()">
+    <button mat-icon-button *ngIf="permission.isAuthenticated">
       <mat-icon
         (click)="sidenav.toggle()"
         matTooltip="{{ 'app.menu.tooltip' | translate }}"
@@ -10,15 +10,15 @@
         >menu</mat-icon
       >
     </button>
-    <button mat-icon-button *ngIf="!isAuthenticated()">
+    <button mat-icon-button *ngIf="!permission.isAuthenticated">
       <mat-icon matTooltip="{{ 'app.offline' | translate }}" color="accent"
         >offline_bolt</mat-icon
       >
     </button>
     <span>{{ title }}</span>
     <span class="toolbar-spacer"></span>
-    <span *ngIf="isAuthenticated()">{{ getUsername() }}</span>
-    <button mat-icon-button *ngIf="isAuthenticated()">
+    <span *ngIf="permission.isAuthenticated">{{ permission.username }}</span>
+    <button mat-icon-button *ngIf="permission.isAuthenticated">
       <mat-icon
         (click)="logOut()"
         matTooltip="{{ 'app.logout' | translate }}"
@@ -32,10 +32,10 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="'/home'">{{
+      <a mat-list-item [routerLink]="'/home'" *ngIf="permission.isUser">{{
         "app.menu.home" | translate
       }}</a>
-      <a mat-list-item [routerLink]="'/facebook'">{{
+      <a mat-list-item [routerLink]="'/facebook'" *ngIf="permission.isAdmin">{{
         "app.menu.facebook" | translate
       }}</a>
     </mat-nav-list>

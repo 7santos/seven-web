@@ -6,8 +6,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { ToastService, PermissionService } from '@service';
+import { PermissionService, ToastService } from '@service';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -15,7 +14,6 @@ import { catchError } from 'rxjs/operators';
 export class ErrorInterceptor implements HttpInterceptor {
   constructor(
     private permissionService: PermissionService,
-    private router: Router,
     private toastService: ToastService
   ) {}
 
@@ -28,7 +26,6 @@ export class ErrorInterceptor implements HttpInterceptor {
         if ([401, 403].indexOf(httpErrorResponse.status) !== -1) {
           // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
           this.permissionService.clearToken();
-          this.router.navigate(['/']);
         }
 
         let errorMessage = '';
