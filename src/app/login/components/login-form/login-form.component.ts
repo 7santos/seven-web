@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SafeUrl } from '@angular/platform-browser';
 import { Login } from '@model';
 
 @Component({
@@ -10,7 +11,7 @@ import { Login } from '@model';
 export class LoginFormComponent implements OnInit {
   formGroup: FormGroup;
 
-  @Input() googleLoginUrl: string = '';
+  @Input() googleLoginUrl: SafeUrl = '';
 
   @Output() signInEvent: EventEmitter<Login> = new EventEmitter<Login>();
 

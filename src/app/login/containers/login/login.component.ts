@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Login } from '@model';
 import {
@@ -14,7 +15,7 @@ import {
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit, AfterViewInit {
-  googleLoginUrl: string;
+  googleLoginUrl: SafeUrl;
 
   constructor(
     private activatedRoute: ActivatedRoute,

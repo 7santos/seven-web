@@ -5,10 +5,11 @@ import { Login, SocialProvider } from '@model';
 import { ApiService } from '@service/api.service';
 import { Observable } from 'rxjs';
 import { AppConstants } from 'src/app/app-constants';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService extends ApiService<Login, void> {
-  constructor(protected http: HttpClient) {
+  constructor(protected http: HttpClient, private domSanitizer: DomSanitizer) {
     super(http, 'auth/');
   }
 
@@ -16,7 +17,8 @@ export class AuthService extends ApiService<Login, void> {
     return this.post(login, 'signin');
   }
 
-  getGoogleLoginUrl(): string {
-    return `${environment.apiUri}${environment.oauth2AuthorizationPath}${SocialProvider.GOOGLE}${AppConstants.REDIRECT_URI_QUERY_PARAM}${environment.redirectUri}`;
+  getGoogleLoginUrl(): SafeUrl {
+    const googleLoginUrl = `${environment.apiUri}${environment.oauth2AuthorizationPath}${SocialProvider.GOOGLE}${AppConstants.REDIRECT_URI_QUERY_PARAM}${environment.redirectUri}`;
+    return this.domSanitizer.bypassSecurityTrustUrl(googleLoginUrl);
   }
 }
