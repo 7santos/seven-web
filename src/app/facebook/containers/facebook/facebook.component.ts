@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
+import { AppService } from '@service';
 
 @Component({
   selector: 'app-facebook',
   templateUrl: './facebook.component.html',
   styleUrls: ['./facebook.component.css'],
 })
-export class FacebookComponent implements OnInit {
-  constructor() {}
+export class FacebookComponent implements AfterViewInit {
+  constructor(private appService: AppService) {}
 
-  ngOnInit(): void {}
+  ngAfterViewInit(): void {
+    this.appService.setTitle('facebook.title');
+  }
 }

@@ -32,12 +32,15 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="'/home'" *ngIf="permission.isUser">{{
+      <a mat-list-item (click)="navigate('/home')" *ngIf="permission.isUser">{{
         "app.menu.home" | translate
       }}</a>
-      <a mat-list-item [routerLink]="'/facebook'" *ngIf="permission.isAdmin">{{
-        "app.menu.facebook" | translate
-      }}</a>
+      <a
+        mat-list-item
+        (click)="navigate('/facebook')"
+        *ngIf="permission.isAdmin"
+        >{{ "app.menu.facebook" | translate }}</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

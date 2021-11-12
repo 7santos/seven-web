@@ -9,6 +9,9 @@
     },
     "offline": "Offline"
   },
+  "facebook": {
+    "title": "Facebook"
+  },
   "home": {
     "title": "Home"
   },

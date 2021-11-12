@@ -1,5 +1,6 @@
 import { AfterContentInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 import { Permission } from '@model';
 import { TranslateService } from '@ngx-translate/core';
 import { AppService, PermissionService } from '@service';
@@ -20,7 +21,8 @@ export class AppComponent implements OnInit, AfterContentInit {
   constructor(
     public translate: TranslateService,
     private appService: AppService,
-    private permissionService: PermissionService
+    private permissionService: PermissionService,
+    private router: Router
   ) {
     translate.addLangs([AppConstants.DEFAULT_LANG]);
     translate.setDefaultLang(AppConstants.DEFAULT_LANG);
@@ -44,5 +46,10 @@ export class AppComponent implements OnInit, AfterContentInit {
   logOut(): void {
     this.sidenav.close();
     this.permissionService.clearToken();
+  }
+
+  navigate(path: string): void {
+    this.sidenav.close();
+    this.router.navigate([path]);
   }
 }
