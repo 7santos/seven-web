@@ -1,0 +1,22 @@
+<mat-form-field class="input-width">
+  <mat-label>{{ title | translate }}</mat-label>
+  <input
+    matInput
+    [(ngModel)]="model"
+    readonly
+    *ngIf="fieldType === FieldType.INPUT"
+  />
+  <a [href]="model" target="_blank" *ngIf="fieldType === FieldType.ANCHOR">
+    <input matInput [(ngModel)]="model" readonly class="cursor-pointer" />
+  </a>
+  <button
+    mat-button
+    matSuffix
+    mat-icon-button
+    matTooltip="{{ 'button.copy' | translate }}"
+    ngxClipboard
+    [cbContent]="model"
+  >
+    <mat-icon color="accent">content_copy</mat-icon>
+  </button>
+</mat-form-field>

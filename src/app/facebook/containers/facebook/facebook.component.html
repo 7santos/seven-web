@@ -1,1 +1,11 @@
-<p>facebook works!</p>
+<div class="facebook-action-buttons">
+  <button mat-button (click)="accordion.openAll()" color="accent">
+    {{ "facebook.expandAll" | translate }}
+  </button>
+  <button mat-button (click)="accordion.closeAll()" color="accent">
+    {{ "facebook.collapseAll" | translate }}
+  </button>
+</div>
+<mat-accordion class="facebook-mat-accordion" multi>
+  <app-facebook-device></app-facebook-device>
+</mat-accordion>

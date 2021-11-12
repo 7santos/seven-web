@@ -1,3 +1,4 @@
+export * from './enum/field-type';
 export * from './enum/role';
 export * from './enum/social-provider';
 

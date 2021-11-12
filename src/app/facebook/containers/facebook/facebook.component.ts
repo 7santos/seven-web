@@ -1,4 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatAccordion } from '@angular/material/expansion';
 import { AppService } from '@service';
 
 @Component({
@@ -7,6 +8,8 @@ import { AppService } from '@service';
   styleUrls: ['./facebook.component.css'],
 })
 export class FacebookComponent implements AfterViewInit {
+  @ViewChild(MatAccordion) accordion!: MatAccordion;
+
   constructor(private appService: AppService) {}
 
   ngAfterViewInit(): void {

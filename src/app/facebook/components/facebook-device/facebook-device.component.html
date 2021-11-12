@@ -1,0 +1,53 @@
+<mat-expansion-panel class="facebook-device-mat-expansion-panel">
+  <mat-expansion-panel-header>
+    <mat-panel-title translate>facebook.device.title</mat-panel-title>
+    <mat-panel-description translate>
+      facebook.device.description
+      <mat-icon color="accent">devices</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <mat-grid-list cols="3" rowHeight="75">
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.device.code'"
+        [model]="facebookLogin.code"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.device.userCode'"
+        [model]="facebookLogin.userCode"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.device.verificationUri'"
+        [model]="facebookLogin.verificationUri"
+        [fieldType]="FieldType.ANCHOR"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.device.expiresIn'"
+        [model]="facebookLogin.expiresIn"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.device.interval'"
+        [model]="facebookLogin.interval"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="3">
+      <button mat-raised-button color="accent" (click)="login()">
+        {{ "facebook.device.buttons.login" | translate }}
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-expansion-panel>

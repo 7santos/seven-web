@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 // import { FlexLayoutModule } from '@angular/flex-layout';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
@@ -25,14 +25,26 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { ClipboardModule } from 'ngx-clipboard';
+import { InfoFieldComponent } from './components';
 
-export const importModules = [];
+export const importModules = [
+  CommonModule,
+  MatButtonModule,
+  TranslateModule,
+  MatInputModule,
+  MatTooltipModule,
+  MatIconModule,
+  FormsModule,
+  ClipboardModule,
+];
 
 export const exportModules = [
   MatDialogModule,
   CommonModule,
   RouterModule,
   // FlexLayoutModule,
+  FormsModule,
   ReactiveFormsModule,
   HttpClientModule,
   MatInputModule,
@@ -55,9 +67,10 @@ export const exportModules = [
   MatCardModule,
   MatChipsModule,
   MatDatepickerModule,
+  ClipboardModule,
 ];
 
-export const components = [];
+export const components = [InfoFieldComponent];
 
 @NgModule({
   imports: [...importModules],

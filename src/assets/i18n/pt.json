@@ -10,7 +10,21 @@
     "offline": "Offline"
   },
   "facebook": {
-    "title": "Facebook"
+    "title": "Facebook",
+    "expandAll": "Expandir Todos",
+    "collapseAll": "Retrair Todos",
+    "device": {
+      "title": "Dispositivo",
+      "description": "Conectar e verificar estado",
+      "code": "Código",
+      "userCode": "Código do Usuário",
+      "verificationUri": "URI de Verificação",
+      "expiresIn": "Expira em (segundos)",
+      "interval": "Intervalo (segundos)",
+      "buttons": {
+        "login": "Conectar"
+      }
+    }
   },
   "home": {
     "title": "Home"
@@ -22,6 +36,7 @@
     "loginWithGoogle": "Entrar com o Google"
   },
   "button": {
-    "signIn": "Entrar"
+    "signIn": "Entrar",
+    "copy": "Copiar"
   }
 }
