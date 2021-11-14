@@ -46,7 +46,43 @@
 
     <mat-grid-tile colspan="3">
       <button mat-raised-button color="accent" (click)="login()">
-        {{ "facebook.device.buttons.login" | translate }}
+        {{ "button.login" | translate }}
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="3" rowHeight="75" style="margin-top: 1em">
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.device.expirationTime'"
+        [model]="loginStatus.expirationTime"
+        [fieldType]="FieldType.DATE"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.device.expiresIn'"
+        [model]="loginStatus.expiresIn"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      *ngIf="loginStatus.error && loginStatus.error.errorUserMsg !== ''"
+    >
+      <button mat-mini-fab color="warn" (click)="openErrorDialog()">
+        <mat-icon>error</mat-icon>
+      </button>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="3">
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="getLoginStatus()"
+        [disabled]="facebookLogin.code === ''"
+      >
+        {{ "button.status" | translate }}
       </button>
     </mat-grid-tile>
   </mat-grid-list>

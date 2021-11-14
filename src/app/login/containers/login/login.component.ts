@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   checkToken(params: Params): void {
     if (this.permissionService.isLoggedIn()) {
-      this.permissionService.storeToken(null);
+      this.onLoginSuccess(null);
     } else if (params['token']) {
-      this.permissionService.storeToken(params['token']);
+      this.onLoginSuccess(params['token']);
     } else if (params['error']) {
       this.toastService.showError(params['error']);
     }
@@ -49,7 +49,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   signIn(login: Login): void {
     this.authService.signIn(login).subscribe((data) => {
-      this.permissionService.storeToken(data.accessToken);
+      this.onLoginSuccess(data.accessToken);
     });
+  }
+
+  private onLoginSuccess(token: string | null) {
+    this.permissionService.storeToken(token);
+    this.toastService.showSuccess('login.success');
   }
 }

@@ -8,7 +8,7 @@ import { AppConstants } from 'src/app/app-constants';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
-export class AuthService extends ApiService<Login, void> {
+export class AuthService extends ApiService {
   constructor(protected http: HttpClient, private domSanitizer: DomSanitizer) {
     super(http, 'auth/');
   }

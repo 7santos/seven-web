@@ -1,0 +1,35 @@
+<h2 mat-dialog-title translate>facebook.error.title</h2>
+
+<mat-dialog-content class="mat-typography">
+  <h3 translate>facebook.error.message</h3>
+  <p>{{facebookError.message}}</p>
+
+  <h3 translate>facebook.error.type</h3>
+  <p>{{facebookError.type}}</p>
+
+  <h3 translate>facebook.error.code</h3>
+  <p>{{facebookError.code}}</p>
+
+  <h3 translate>facebook.error.errorSubcode</h3>
+  <p>{{facebookError.errorSubcode}}</p>
+
+  <h3 translate>facebook.error.isTransient</h3>
+  <p>
+    <mat-slide-toggle [checked]="facebookError.isTransient" color="accent">
+      {{ "global.slideToggle." + facebookError.isTransient | translate }}
+    </mat-slide-toggle>
+  </p>
+
+  <h3 translate>facebook.error.errorUserTitle</h3>
+  <p>{{facebookError.errorUserTitle}}</p>
+
+  <h3 translate>facebook.error.errorUserMsg</h3>
+  <p>{{facebookError.errorUserMsg}}</p>
+
+  <h3 translate>facebook.error.fbtraceId</h3>
+  <p>{{facebookError.fbtraceId}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ "button.close" | translate }}</button>
+</mat-dialog-actions>

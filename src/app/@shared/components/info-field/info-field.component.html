@@ -9,8 +9,13 @@
   <a [href]="model" target="_blank" *ngIf="fieldType === FieldType.ANCHOR">
     <input matInput [(ngModel)]="model" readonly class="cursor-pointer" />
   </a>
+  <input
+    matInput
+    [ngModel]="model | date: 'yyyy-MM-dd HH:mm:ss.SSS ZZZZ'"
+    readonly
+    *ngIf="fieldType === FieldType.DATE"
+  />
   <button
-    mat-button
     matSuffix
     mat-icon-button
     matTooltip="{{ 'button.copy' | translate }}"

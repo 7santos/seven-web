@@ -1,12 +1,18 @@
 import { Injectable, NgZone } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({ providedIn: 'root' })
 export class ToastService {
-  constructor(public matSnackBar: MatSnackBar, private zone: NgZone) {}
+  constructor(
+    private translateService: TranslateService,
+    public matSnackBar: MatSnackBar,
+    private zone: NgZone
+  ) {}
 
   showSuccess(message: string): void {
-    this.showMessage(message, 'Success', 'success');
+    const i18nMessage = this.translateService.instant(message);
+    this.showMessage(i18nMessage, 'Success', 'success');
   }
 
   showError(message: string): void {

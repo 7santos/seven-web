@@ -21,9 +21,20 @@
       "verificationUri": "URI de Verificação",
       "expiresIn": "Expira em (segundos)",
       "interval": "Intervalo (segundos)",
-      "buttons": {
-        "login": "Conectar"
-      }
+      "loginSuccess": "Dispositivo conectado com sucesso!",
+      "expirationTime": "Data de Validade",
+      "loginStatusSuccess": "Estado verificado com sucesso"
+    },
+    "error": {
+      "title": "Erro",
+      "message": "Mensagem",
+      "type": "Tipo",
+      "code": "Código",
+      "errorSubcode": "Sub Código",
+      "isTransient": "Transitório",
+      "errorUserTitle": "Título do Usuário",
+      "errorUserMsg": "Mensagem do Usuário",
+      "fbtraceId": "ID de Rastreamento"
     }
   },
   "home": {
@@ -33,10 +44,20 @@
     "title": "Login",
     "email": "E-mail",
     "password": "Senha",
-    "loginWithGoogle": "Entrar com o Google"
+    "loginWithGoogle": "Entrar com o Google",
+    "success": "Logado com sucesso"
   },
   "button": {
     "signIn": "Entrar",
-    "copy": "Copiar"
+    "copy": "Copiar",
+    "login": "Conectar",
+    "status": "Verificar Estado",
+    "close": "Fechar"
+  },
+  "global": {
+    "slideToggle": {
+      "true": "Sim",
+      "false": "Não"
+    }
   }
 }

@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '@env/environment';
 
-export abstract class ApiService<T, ID> {
+export abstract class ApiService {
   constructor(protected httpClient: HttpClient, public baseUrl: string) {}
 
-  post(t: T, path: string = ''): Observable<T> {
-    return this.httpClient.post<T>(
+  post(t: any, path: string = ''): Observable<any> {
+    return this.httpClient.post<any>(
       `${environment.apiUri}${this.baseUrl}${path}`,
       t
     );

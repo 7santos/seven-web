@@ -2,7 +2,9 @@ export * from './enum/field-type';
 export * from './enum/role';
 export * from './enum/social-provider';
 
+export * from './facebook/facebook-error';
 export * from './facebook/facebook-login';
+export * from './facebook/login-status';
 
 export * from './jwt-payload';
 export * from './login';

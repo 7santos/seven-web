@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from '@core/guards';
 import { SharedModule } from '@shared';
-import { FacebookDeviceComponent } from './components';
+import { FacebookDeviceComponent, FacebookErrorDialog } from './components';
 import { FacebookComponent } from './containers';
 
 export const FacebookRoutes: Routes = [
@@ -14,7 +14,11 @@ export const FacebookRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [FacebookComponent, FacebookDeviceComponent],
+  declarations: [
+    FacebookComponent,
+    FacebookDeviceComponent,
+    FacebookErrorDialog,
+  ],
   imports: [SharedModule, RouterModule.forChild(FacebookRoutes)],
 })
 export class FacebookModule {}

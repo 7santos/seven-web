@@ -6,4 +6,8 @@ export class FacebookLogin {
     public expiresIn: number,
     public interval: number
   ) {}
+
+  static empty(): FacebookLogin {
+    return new FacebookLogin('', '', '', -1, -1);
+  }
 }
