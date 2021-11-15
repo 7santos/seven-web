@@ -11,4 +11,10 @@ export abstract class ApiService {
       t
     );
   }
+
+  get(path: string = ''): Observable<any> {
+    return this.httpClient.get<any>(
+      `${environment.apiUri}${this.baseUrl}${path}`
+    );
+  }
 }
