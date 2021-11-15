@@ -3,7 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Permission } from '@model';
 import { TranslateService } from '@ngx-translate/core';
-import { AppService, PermissionService } from '@service';
+import { AppService, LoaderService, PermissionService } from '@service';
 import { AppConstants } from 'src/app/app-constants';
 
 @Component({
@@ -20,6 +20,7 @@ export class AppComponent implements OnInit, AfterContentInit {
 
   constructor(
     public translate: TranslateService,
+    public loaderService: LoaderService,
     private appService: AppService,
     private permissionService: PermissionService,
     private router: Router

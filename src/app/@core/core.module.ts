@@ -2,7 +2,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AuthInterceptor, ErrorInterceptor } from '@core/interceptors';
+import {
+  AuthInterceptor,
+  ErrorInterceptor,
+  LoaderInterceptor,
+} from '@core/interceptors';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule, RouterModule],
@@ -15,6 +19,11 @@ import { AuthInterceptor, ErrorInterceptor } from '@core/interceptors';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
       multi: true,
     },
   ],

@@ -27,6 +27,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ClipboardModule } from 'ngx-clipboard';
 import { InfoFieldComponent } from './components';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 export const importModules = [
   CommonModule,
@@ -68,6 +69,7 @@ export const exportModules = [
   MatChipsModule,
   MatDatepickerModule,
   ClipboardModule,
+  MatProgressBarModule,
 ];
 
 export const components = [InfoFieldComponent];
