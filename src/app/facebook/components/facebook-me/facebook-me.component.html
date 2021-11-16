@@ -1,0 +1,50 @@
+<mat-expansion-panel class="facebook-mat-expansion-panel">
+  <mat-expansion-panel-header>
+    <mat-panel-title translate>facebook.me.title</mat-panel-title>
+    <mat-panel-description translate>
+      facebook.me.description
+      <mat-icon color="accent">contact_page</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <mat-grid-list cols="3" rowHeight="75">
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.me.id'"
+        [model]="accountPage.id"
+        class="input-width"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.me.name'"
+        [model]="accountPage.name"
+        class="input-width"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.me.category'"
+        [model]="accountPage.category"
+        class="input-width"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="3">
+      <app-info-field
+        [title]="'facebook.me.tasks'"
+        [model]="accountPage.tasks"
+        [fieldType]="FieldType.CHIP_LIST"
+        class="input-width"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="3">
+      <button mat-raised-button color="accent" (click)="meAccounts()">
+        {{ "button.save" | translate }}
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-expansion-panel>

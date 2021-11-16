@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FacebookLogin, FieldType, LoginStatus } from '@model';
 import { DeviceService, ToastService } from '@service';
 import { MatDialog } from '@angular/material/dialog';
 import { FacebookErrorDialog } from '..';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-facebook-device',
   templateUrl: './facebook-device.component.html',
   styleUrls: ['./facebook-device.component.css'],
 })
-export class FacebookDeviceComponent implements OnInit {
+export class FacebookDeviceComponent implements OnDestroy {
+  private unsubscribe$ = new Subject<void>();
+
   facebookLogin: FacebookLogin = FacebookLogin.empty();
 
   loginStatus: LoginStatus = LoginStatus.empty();
@@ -22,18 +25,25 @@ export class FacebookDeviceComponent implements OnInit {
     public dialog: MatDialog
   ) {}
 
-  ngOnInit(): void {}
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
 
   login(): void {
-    this.deviceService.login().subscribe((facebookLogin) => {
-      this.facebookLogin = facebookLogin;
-      this.toastService.showSuccess('facebook.device.loginSuccess');
-    });
+    this.deviceService
+      .login()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((facebookLogin) => {
+        this.facebookLogin = facebookLogin;
+        this.toastService.showSuccess('facebook.device.loginSuccess');
+      });
   }
 
   getLoginStatus(): void {
     this.deviceService
       .loginStatus(this.facebookLogin.code)
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe((loginStatus) => {
         this.loginStatus = loginStatus;
 

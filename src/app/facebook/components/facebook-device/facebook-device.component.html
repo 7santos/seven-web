@@ -1,4 +1,4 @@
-<mat-expansion-panel class="facebook-device-mat-expansion-panel">
+<mat-expansion-panel class="facebook-mat-expansion-panel">
   <mat-expansion-panel-header>
     <mat-panel-title translate>facebook.device.title</mat-panel-title>
     <mat-panel-description translate>
@@ -12,6 +12,7 @@
       <app-info-field
         [title]="'facebook.device.code'"
         [model]="facebookLogin.code"
+        class="input-width"
       ></app-info-field>
     </mat-grid-tile>
 
@@ -19,6 +20,7 @@
       <app-info-field
         [title]="'facebook.device.userCode'"
         [model]="facebookLogin.userCode"
+        class="input-width"
       ></app-info-field>
     </mat-grid-tile>
 
@@ -27,6 +29,7 @@
         [title]="'facebook.device.verificationUri'"
         [model]="facebookLogin.verificationUri"
         [fieldType]="FieldType.ANCHOR"
+        class="input-width"
       ></app-info-field>
     </mat-grid-tile>
 
@@ -34,6 +37,7 @@
       <app-info-field
         [title]="'facebook.device.expiresIn'"
         [model]="facebookLogin.expiresIn"
+        class="input-width"
       ></app-info-field>
     </mat-grid-tile>
 
@@ -41,6 +45,7 @@
       <app-info-field
         [title]="'facebook.device.interval'"
         [model]="facebookLogin.interval"
+        class="input-width"
       ></app-info-field>
     </mat-grid-tile>
 
@@ -51,12 +56,13 @@
     </mat-grid-tile>
   </mat-grid-list>
 
-  <mat-grid-list cols="3" rowHeight="75" class="facebook-device-margin-top-1em">
+  <mat-grid-list cols="3" rowHeight="75" class="margin-top-1em">
     <mat-grid-tile>
       <app-info-field
         [title]="'facebook.device.expirationTime'"
         [model]="loginStatus.expirationTime"
         [fieldType]="FieldType.DATE"
+        class="input-width"
       ></app-info-field>
     </mat-grid-tile>
 
@@ -64,6 +70,7 @@
       <app-info-field
         [title]="'facebook.device.expiresIn'"
         [model]="loginStatus.expiresIn"
+        class="input-width"
       ></app-info-field>
     </mat-grid-tile>
 

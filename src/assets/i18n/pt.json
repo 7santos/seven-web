@@ -35,6 +35,15 @@
       "errorUserTitle": "Título do Usuário",
       "errorUserMsg": "Mensagem do Usuário",
       "fbtraceId": "ID de Rastreamento"
+    },
+    "me": {
+      "title": "Página da Conta",
+      "description": "Salvar o ID da página do Facebook que está conectada à conta do Instagram",
+      "id": "ID",
+      "name": "Nome",
+      "category": "Categoria",
+      "tasks": "Tarefas",
+      "meAccountsSuccess": "Sucesso ao salvar o ID da página do Facebook"
     }
   },
   "home": {
@@ -52,7 +61,8 @@
     "copy": "Copiar",
     "login": "Conectar",
     "status": "Verificar Estado",
-    "close": "Fechar"
+    "close": "Fechar",
+    "save": "Salvar"
   },
   "global": {
     "slideToggle": {

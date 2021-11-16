@@ -1,9 +1,16 @@
-import { AfterContentInit, Component, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Permission } from '@model';
 import { TranslateService } from '@ngx-translate/core';
 import { AppService, LoaderService, PermissionService } from '@service';
+import { Subject, takeUntil } from 'rxjs';
 import { AppConstants } from 'src/app/app-constants';
 
 @Component({
@@ -11,7 +18,9 @@ import { AppConstants } from 'src/app/app-constants';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit, AfterContentInit {
+export class AppComponent implements OnInit, AfterContentInit, OnDestroy {
+  private unsubscribe$ = new Subject<void>();
+
   title: string = '';
 
   permission: Permission = new Permission(false, false, false, '');
@@ -30,11 +39,17 @@ export class AppComponent implements OnInit, AfterContentInit {
   }
 
   ngOnInit(): void {
-    this.appService.getTitle().subscribe((appTitle) => (this.title = appTitle));
+    this.appService
+      .getTitle()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((appTitle) => (this.title = appTitle));
 
-    this.appService.getPermission().subscribe((permission) => {
-      this.permission = permission;
-    });
+    this.appService
+      .getPermission()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((permission) => {
+        this.permission = permission;
+      });
   }
 
   ngAfterContentInit(): void {
@@ -42,6 +57,11 @@ export class AppComponent implements OnInit, AfterContentInit {
     this.permission.isAdmin = this.permissionService.isAdmin();
     this.permission.isUser = this.permissionService.isUser();
     this.permission.username = this.permissionService.getUserName();
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   logOut(): void {

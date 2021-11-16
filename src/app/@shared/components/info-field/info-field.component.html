@@ -15,6 +15,12 @@
     readonly
     *ngIf="fieldType === FieldType.DATE"
   />
+  <mat-chip-list #chipList *ngIf="fieldType === FieldType.CHIP_LIST">
+    <mat-chip *ngFor="let value of model" color="accent" selected>
+      {{ value }}
+    </mat-chip>
+    <input [matChipInputFor]="chipList" />
+  </mat-chip-list>
   <button
     matSuffix
     mat-icon-button

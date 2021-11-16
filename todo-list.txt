@@ -4,3 +4,8 @@
 - Estudar sobre sql injection no angular para proteger os campos dos formulários
 - Melhorar as cores das mensagens de erro e sucesso
 - Mudar a cor do link escolhido no menu, o atual, para a cor accent
+- Validar o timestamp do jwt token ao verificar se um usuário está logado
+
+- Links Úteis
+    - https://medium.com/angular-in-depth/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794
+    - https://stackoverflow.com/questions/38008334/angular-rxjs-when-should-i-unsubscribe-from-subscription

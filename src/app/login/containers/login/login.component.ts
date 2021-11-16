@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Login } from '@model';
@@ -8,13 +8,16 @@ import {
   PermissionService,
   ToastService,
 } from '@service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit, AfterViewInit {
+export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
+  private unsubscribe$ = new Subject<void>();
+
   googleLoginUrl: SafeUrl;
 
   constructor(
@@ -28,13 +31,18 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe((params) =>
-      this.checkToken(params)
-    );
+    this.activatedRoute.queryParams
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((params) => this.checkToken(params));
   }
 
   ngAfterViewInit(): void {
     this.appService.setTitle('login.title');
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   checkToken(params: Params): void {
@@ -48,9 +56,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   signIn(login: Login): void {
-    this.authService.signIn(login).subscribe((data) => {
-      this.onLoginSuccess(data.accessToken);
-    });
+    this.authService
+      .signIn(login)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((data) => {
+        this.onLoginSuccess(data.accessToken);
+      });
   }
 
   private onLoginSuccess(token: string | null) {

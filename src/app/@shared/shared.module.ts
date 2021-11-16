@@ -38,6 +38,7 @@ export const importModules = [
   MatIconModule,
   FormsModule,
   ClipboardModule,
+  MatChipsModule,
 ];
 
 export const exportModules = [

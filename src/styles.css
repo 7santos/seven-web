@@ -2,7 +2,10 @@
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
 .input-width {
-  width: 400px;
+  width: 100%;
+  flex: 1 1 auto;
+  margin-left: 1em;
+  margin-right: 2em;
 }
 
 mat-grid-list {
@@ -19,4 +22,18 @@ mat-radio-button {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.facebook-mat-expansion-panel .mat-expansion-panel-header-title,
+.facebook-mat-expansion-panel .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.facebook-mat-expansion-panel .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.margin-top-1em {
+  margin-top: 1em;
 }
