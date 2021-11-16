@@ -10,6 +10,18 @@
     },
     "offline": "Offline"
   },
+  "accessData": {
+    "title": "Dados de Acesso",
+    "getSuccess": "Dados de Acesso recuperados com sucesso",
+    "id": "ID",
+    "name": "Nome",
+    "expirationEpoch": "UNIX Timestamp",
+    "expirationDate": "Data de Expiração",
+    "pageId": "ID da Página",
+    "igUserId": "ID do Usuário IG",
+    "createdDate": "Data de Criação",
+    "lastModifiedDate": "Data de Ùltima Modificação"
+  },
   "facebook": {
     "title": "Facebook",
     "expandAll": "Expandir Todos",
@@ -22,7 +34,7 @@
       "verificationUri": "URI de Verificação",
       "expiresIn": "Expira em (segundos)",
       "interval": "Intervalo (segundos)",
-      "loginSuccess": "Dispositivo conectado com sucesso!",
+      "loginSuccess": "Dispositivo conectado com sucesso",
       "expirationTime": "Data de Validade",
       "loginStatusSuccess": "Estado verificado com sucesso"
     },
@@ -70,7 +82,8 @@
     "login": "Conectar",
     "status": "Verificar Estado",
     "close": "Fechar",
-    "save": "Salvar"
+    "save": "Salvar",
+    "get": "Buscar"
   },
   "global": {
     "slideToggle": {

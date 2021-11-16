@@ -1,0 +1,74 @@
+<mat-grid-list cols="3" rowHeight="75">
+  <mat-grid-tile>
+    <app-info-field
+      [title]="'accessData.id'"
+      [model]="accessData.id"
+      class="input-width"
+    ></app-info-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-info-field
+      [title]="'accessData.name'"
+      [model]="accessData.name"
+      class="input-width"
+    ></app-info-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-info-field
+      [title]="'accessData.expirationEpoch'"
+      [model]="accessData.expirationEpoch"
+      class="input-width"
+    ></app-info-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-info-field
+      [title]="'accessData.expirationDate'"
+      [model]="accessData.expirationDate"
+      [fieldType]="FieldType.DATE"
+      class="input-width"
+    ></app-info-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-info-field
+      [title]="'accessData.pageId'"
+      [model]="accessData.pageId"
+      class="input-width"
+    ></app-info-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-info-field
+      [title]="'accessData.igUserId'"
+      [model]="accessData.igUserId"
+      class="input-width"
+    ></app-info-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-info-field
+      [title]="'accessData.createdDate'"
+      [model]="accessData.createdDate"
+      [fieldType]="FieldType.DATE"
+      class="input-width"
+    ></app-info-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-info-field
+      [title]="'accessData.lastModifiedDate'"
+      [model]="accessData.lastModifiedDate"
+      [fieldType]="FieldType.DATE"
+      class="input-width"
+    ></app-info-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="3">
+    <button mat-raised-button color="accent" (click)="getAccessData()">
+      {{ "button.get" | translate }}
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>

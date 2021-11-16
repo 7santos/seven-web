@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+import { AppService } from '@service';
 
 @Component({
   selector: 'app-access-data',
   templateUrl: './access-data.component.html',
-  styleUrls: ['./access-data.component.css']
+  styleUrls: ['./access-data.component.css'],
 })
-export class AccessDataComponent implements OnInit {
+export class AccessDataComponent implements AfterViewInit {
+  constructor(private appService: AppService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    this.appService.setTitle('accessData.title');
   }
-
 }
