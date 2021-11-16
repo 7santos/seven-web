@@ -4,6 +4,7 @@ export * from './auth.service';
 export * from './device.service';
 export * from './loader.service';
 export * from './me.service';
+export * from './page.service';
 export * from './permission.service';
 export * from './toast.service';
 export * from './token-storage.service';

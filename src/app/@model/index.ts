@@ -6,6 +6,7 @@ export * from './facebook/account-page';
 export * from './facebook/facebook-error';
 export * from './facebook/facebook-login';
 export * from './facebook/login-status';
+export * from './facebook/page';
 
 export * from './jwt-payload';
 export * from './login';

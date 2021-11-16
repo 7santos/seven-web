@@ -6,6 +6,7 @@ import {
   FacebookDeviceComponent,
   FacebookErrorDialog,
   FacebookMeComponent,
+  FacebookPageComponent,
 } from './components';
 import { FacebookComponent } from './containers';
 
@@ -23,6 +24,7 @@ export const FacebookRoutes: Routes = [
     FacebookDeviceComponent,
     FacebookErrorDialog,
     FacebookMeComponent,
+    FacebookPageComponent,
   ],
   imports: [SharedModule, RouterModule.forChild(FacebookRoutes)],
 })

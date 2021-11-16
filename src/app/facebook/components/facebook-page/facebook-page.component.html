@@ -1,0 +1,33 @@
+<mat-expansion-panel class="facebook-mat-expansion-panel">
+  <mat-expansion-panel-header>
+    <mat-panel-title translate>facebook.page.title</mat-panel-title>
+    <mat-panel-description translate>
+      facebook.page.description
+      <mat-icon color="accent">person</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <mat-grid-list cols="3" rowHeight="75">
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.page.pageId'"
+        [model]="page.pageId"
+        class="input-width"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-info-field
+        [title]="'facebook.page.igUserId'"
+        [model]="page.igUserId"
+        class="input-width"
+      ></app-info-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="3">
+      <button mat-raised-button color="accent" (click)="getPage()">
+        {{ "button.save" | translate }}
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-expansion-panel>

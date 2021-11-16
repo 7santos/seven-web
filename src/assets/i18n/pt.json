@@ -44,6 +44,13 @@
       "category": "Categoria",
       "tasks": "Tarefas",
       "meAccountsSuccess": "Sucesso ao salvar o ID da página do Facebook"
+    },
+    "page": {
+      "title": "Usuário IG",
+      "description": "Salvar o ID do Usuário IG (conta Instagram Business ou Creator conectada à página do Facebook)",
+      "pageId": "ID da Página",
+      "igUserId": "ID do Usuário IG",
+      "pageSuccess": "Sucesso ao salvar o ID do Usuário IG"
     }
   },
   "home": {
