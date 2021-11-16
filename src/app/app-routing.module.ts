@@ -16,6 +16,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./facebook/facebook.module').then((m) => m.FacebookModule),
   },
+  {
+    path: 'access-data',
+    loadChildren: () =>
+      import('./access-data/access-data.module').then(
+        (m) => m.AccessDataModule
+      ),
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

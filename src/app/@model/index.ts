@@ -8,6 +8,7 @@ export * from './facebook/facebook-login';
 export * from './facebook/login-status';
 export * from './facebook/page';
 
+export * from './access-data';
 export * from './jwt-payload';
 export * from './login';
 export * from './permission';

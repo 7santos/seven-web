@@ -46,6 +46,12 @@
         *ngIf="permission.isAdmin"
         >{{ "app.menu.facebook" | translate }}</a
       >
+      <a
+        mat-list-item
+        (click)="navigate('/access-data')"
+        *ngIf="permission.isAdmin"
+        >{{ "app.menu.accessData" | translate }}</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

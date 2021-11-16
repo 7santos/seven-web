@@ -5,7 +5,8 @@
     "menu": {
       "tooltip": "Menu",
       "home": "Home",
-      "facebook": "Facebook"
+      "facebook": "Facebook",
+      "accessData": "Dados de Acesso"
     },
     "offline": "Offline"
   },

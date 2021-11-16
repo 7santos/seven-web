@@ -1,3 +1,4 @@
+export * from './access-data.service';
 export * from './api.service';
 export * from './app.service';
 export * from './auth.service';
