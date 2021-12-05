@@ -22,6 +22,14 @@
     "createdDate": "Data de Criação",
     "lastModifiedDate": "Data de Ùltima Modificação"
   },
+  "contact": {
+    "creation": {
+      "title": "Contato",
+      "name": "Nome",
+      "value": "Celular",
+      "success": "Contato registado com sucesso! Em poucos minutos irá receber uma mensagem de um dos nossos consultores."
+    }
+  },
   "facebook": {
     "title": "Facebook",
     "expandAll": "Expandir Todos",

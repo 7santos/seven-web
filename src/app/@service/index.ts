@@ -2,6 +2,7 @@ export * from './access-data.service';
 export * from './api.service';
 export * from './app.service';
 export * from './auth.service';
+export * from './contact.service';
 export * from './device.service';
 export * from './loader.service';
 export * from './me.service';

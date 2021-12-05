@@ -3,6 +3,7 @@
 - Colocar validação de regex nos campos de email e senha do login
 - Estudar sobre sql injection no angular para proteger os campos dos formulários
 - Melhorar as cores das mensagens de erro e sucesso
+- Traduzir o texto do botão da mensagem do toast service
 - Mudar a cor do link escolhido no menu, o atual, para a cor accent
 - Validar o timestamp do jwt token ao verificar se um usuário está logado
 

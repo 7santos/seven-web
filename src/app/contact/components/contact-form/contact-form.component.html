@@ -4,19 +4,19 @@
       <mat-form-field class="default-input-width">
         <input
           matInput
-          placeholder="{{ 'login.email' | translate }}"
-          formControlName="email"
+          placeholder="{{ 'contact.creation.name' | translate }}"
+          formControlName="name"
         />
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile>
       <mat-form-field class="default-input-width">
         <input
-          type="password"
           matInput
-          placeholder="{{ 'login.password' | translate }}"
-          formControlName="password"
+          placeholder="{{ 'contact.creation.value' | translate }}"
+          formControlName="value"
         />
+        <mat-icon matSuffix [ngStyle]="{ color: 'green' }">whatsapp</mat-icon>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile>
@@ -24,20 +24,10 @@
         mat-raised-button
         color="accent"
         [disabled]="formGroup.invalid"
-        (click)="signIn()"
+        (click)="create()"
       >
-        {{ "button.signIn" | translate }}
+        {{ "button.save" | translate }}
       </button>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <a [href]="googleLoginUrl">
-        <img
-          alt="{{ 'login.loginWithGoogle' | translate }}"
-          src="assets/images/google.png"
-          class="social-provider-logo"
-          matTooltip="{{ 'login.loginWithGoogle' | translate }}"
-        />
-      </a>
     </mat-grid-tile>
   </mat-grid-list>
 </form>

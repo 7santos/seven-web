@@ -23,6 +23,11 @@ const routes: Routes = [
         (m) => m.AccessDataModule
       ),
   },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then((m) => m.ContactModule),
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
