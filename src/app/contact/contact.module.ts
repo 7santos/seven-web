@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared';
 import { ContactFormComponent } from './components';
 import { ContactCreationComponent } from './containers';
+import { NgxMaskModule } from 'ngx-mask';
 
 export const ContactRoutes: Routes = [
   {
@@ -13,6 +14,10 @@ export const ContactRoutes: Routes = [
 
 @NgModule({
   declarations: [ContactCreationComponent, ContactFormComponent],
-  imports: [SharedModule, RouterModule.forChild(ContactRoutes)],
+  imports: [
+    SharedModule,
+    NgxMaskModule.forRoot(),
+    RouterModule.forChild(ContactRoutes),
+  ],
 })
 export class ContactModule {}
