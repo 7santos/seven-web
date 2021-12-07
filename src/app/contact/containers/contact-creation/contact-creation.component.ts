@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Contact, ContactSource } from '@model';
 import { AppService, ContactService, ToastService } from '@service';
 import { Subject, takeUntil } from 'rxjs';
@@ -20,7 +20,8 @@ export class ContactCreationComponent
     private activatedRoute: ActivatedRoute,
     private appService: AppService,
     private contactService: ContactService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -58,6 +59,7 @@ export class ContactCreationComponent
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((data) => {
         this.toastService.showSuccess('contact.creation.success');
+        this.router.navigate(['/']);
       });
   }
 }
