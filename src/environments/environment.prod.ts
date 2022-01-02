@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUri: 'apiUri',
+  apiUri: 'https://seven-back-end.herokuapp.com/eru/',
   oauth2AuthorizationPath: 'oauth2AuthorizationPath',
-  redirectUri: 'redirectUri',
+  redirectUri: 'https://seven-front-end.herokuapp.com/login',
 };
