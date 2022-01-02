@@ -8,7 +8,7 @@ import {
 
 export class Contact {
   constructor(
-    public id: string,
+    public id: number,
     public name: string,
     public source: ContactSource,
     public status: ContactStatus,
@@ -21,7 +21,7 @@ export class Contact {
     const contact = {} as Contact;
     contact.name = simpleContact.name;
     contact.infos = [
-      new ContactInfo(ContactType.WHATSAPP, simpleContact.value),
+      new ContactInfo(null, ContactType.WHATSAPP, simpleContact.value),
     ];
     return contact;
   }
