@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SafeUrl } from '@angular/platform-browser';
 import { Login } from '@model';
@@ -8,7 +8,7 @@ import { Login } from '@model';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css'],
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
   formGroup: FormGroup;
 
   @Input() googleLoginUrl: SafeUrl = '';
@@ -18,8 +18,6 @@ export class LoginFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.formGroup = this.buildForm();
   }
-
-  ngOnInit(): void {}
 
   private buildForm(): FormGroup {
     return this.formBuilder.group({
