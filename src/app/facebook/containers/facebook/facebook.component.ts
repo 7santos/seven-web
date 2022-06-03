@@ -14,5 +14,6 @@ export class FacebookComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.appService.setTitle('facebook.title');
+    this.appService.setShowHeader(true);
   }
 }

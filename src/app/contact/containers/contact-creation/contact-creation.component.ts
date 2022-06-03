@@ -32,6 +32,7 @@ export class ContactCreationComponent
 
   ngAfterViewInit(): void {
     this.appService.setTitle('contact.creation.title');
+    this.appService.setShowHeader(false);
   }
 
   ngOnDestroy(): void {

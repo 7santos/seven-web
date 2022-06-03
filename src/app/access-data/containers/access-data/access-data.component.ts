@@ -11,5 +11,6 @@ export class AccessDataComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.appService.setTitle('accessData.title');
+    this.appService.setShowHeader(true);
   }
 }

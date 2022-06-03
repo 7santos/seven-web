@@ -15,6 +15,10 @@ export class AppService {
 
   private permission$ = this.permission.asObservable();
 
+  private showHeader = new BehaviorSubject<boolean>(true);
+
+  private showHeader$ = this.showHeader.asObservable();
+
   constructor(private translateService: TranslateService) {}
 
   setTitle(title: string): void {
@@ -35,5 +39,15 @@ export class AppService {
 
   getPermission(): Observable<Permission> {
     return this.permission$;
+  }
+
+  setShowHeader(showHeader: boolean): void {
+    setTimeout(() => {
+      this.showHeader.next(showHeader);
+    }, 0);
+  }
+
+  getShowHeader(): Observable<boolean> {
+    return this.showHeader$;
   }
 }
