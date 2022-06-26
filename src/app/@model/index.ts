@@ -11,10 +11,15 @@ export * from './facebook/facebook-login';
 export * from './facebook/login-status';
 export * from './facebook/page';
 
+export * from './filter/user-filter';
+
 export * from './access-data';
+export * from './audit';
 export * from './contact-info';
 export * from './contact';
 export * from './jwt-payload';
 export * from './login';
 export * from './permission';
+export * from './prime';
 export * from './simple-contact';
+export * from './user';
