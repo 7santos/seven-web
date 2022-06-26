@@ -1,34 +1,41 @@
-<form [formGroup]="formGroup" novalidate>
-  <mat-grid-list cols="1" rowHeight="75">
-    <mat-grid-tile>
-      <mat-form-field class="default-input-width">
-        <input
-          matInput
-          placeholder="{{ 'contact.creation.name' | translate }}"
-          formControlName="name"
-        />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field class="default-input-width">
-        <input
-          matInput
-          placeholder="{{ 'contact.creation.value' | translate }}"
-          formControlName="value"
-          mask="(00) 00000-0000"
-        />
-        <mat-icon matSuffix [ngStyle]="{ color: 'green' }">whatsapp</mat-icon>
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button
-        mat-raised-button
-        color="accent"
-        [disabled]="formGroup.invalid"
-        (click)="create()"
-      >
-        {{ "button.save" | translate }}
-      </button>
-    </mat-grid-tile>
-  </mat-grid-list>
-</form>
+<div class="background">
+  <!--form [formGroup]="formGroup" novalidate>
+    <mat-grid-list cols="1" rowHeight="75">
+      <mat-grid-tile>
+        <mat-form-field class="default-input-width">
+          <input
+            matInput
+            placeholder="{{ 'contact.creation.name' | translate }}"
+            formControlName="name"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="default-input-width">
+          <input
+            matInput
+            placeholder="{{ 'contact.creation.value' | translate }}"
+            formControlName="value"
+            mask="(00) 00000-0000"
+          />
+          <mat-icon matSuffix [ngStyle]="{ color: 'green' }">whatsapp</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button
+          mat-raised-button
+          color="accent"
+          [disabled]="formGroup.invalid"
+          (click)="create()"
+        >
+          {{ "button.save" | translate }}
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form-->
+  <div class="header">
+    <div class="logo"></div>
+  </div>
+  <div class="container"></div>
+  <div class="footer"></div>
+</div>

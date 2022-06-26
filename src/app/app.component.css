@@ -25,3 +25,7 @@
   height: 88vh;
   padding-top: 0.5em;
 }
+
+.content-no-header {
+  height: 100vh;
+}
