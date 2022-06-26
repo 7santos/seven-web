@@ -9,9 +9,13 @@ export * from './facebook/account-page';
 export * from './facebook/facebook-error';
 export * from './facebook/facebook-login';
 export * from './facebook/login-status';
-export * from './facebook/page';
+export * from './facebook/facebook-page';
 
 export * from './filter/user-filter';
+
+export * from './page/page';
+export * from './page/pageable';
+export * from './page/sort';
 
 export * from './access-data';
 export * from './audit';

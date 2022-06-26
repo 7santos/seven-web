@@ -1,20 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '@env/environment';
+import { Prime } from '@model';
 
-export abstract class ApiService {
+export interface QueryParams {
+  [name: string]: string | string[];
+}
+
+export abstract class ApiService<E extends Prime, F, ID> {
   constructor(protected httpClient: HttpClient, public baseUrl: string) {}
 
-  post(t: any, path: string = ''): Observable<any> {
-    return this.httpClient.post<any>(
-      `${environment.apiUri}${this.baseUrl}${path}`,
-      t
-    );
-  }
-
-  get(path: string = ''): Observable<any> {
-    return this.httpClient.get<any>(
-      `${environment.apiUri}${this.baseUrl}${path}`
-    );
-  }
+  abstract getQueryParams(filter: F): QueryParams;
 }

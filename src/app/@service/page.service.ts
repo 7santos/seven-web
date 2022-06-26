@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Page } from '@model';
+import { FacebookPage } from '@model';
 import { BasicApiService } from '@service/basic-api.service';
 import { Observable } from 'rxjs';
 
@@ -10,7 +10,7 @@ export class PageService extends BasicApiService {
     super(http, 'page/');
   }
 
-  page(): Observable<Page> {
+  page(): Observable<FacebookPage> {
     return this.get();
   }
 }
