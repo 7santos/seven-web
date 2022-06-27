@@ -98,7 +98,8 @@
     "save": "Salvar",
     "get": "Buscar",
     "ok": "Ok",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "clear": "Apagar"
   },
   "global": {
     "slideToggle": {
