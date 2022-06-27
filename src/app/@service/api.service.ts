@@ -9,7 +9,7 @@ export interface QueryParams {
   [name: string]: string | string[];
 }
 
-export abstract class ApiService<E extends Prime, F, ID> {
+export abstract class ApiService<E extends Prime<ID>, F, ID> {
   constructor(protected httpClient: HttpClient, public baseUrl: string) {}
 
   abstract getQueryParams(filter: F): QueryParams;

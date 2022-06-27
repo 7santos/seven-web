@@ -98,6 +98,7 @@
     "slideToggle": {
       "true": "Sim",
       "false": "Não"
-    }
+    },
+    "saveSuccess": "Salvado com sucesso"
   }
 }

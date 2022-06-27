@@ -12,7 +12,7 @@ import { Subject, takeUntil } from 'rxjs';
 export abstract class BaseFilterDirective<T> implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
 
-  formGroup: FormGroup = new FormGroup('');
+  formGroup: FormGroup = new FormGroup({});
 
   @Output() restart: EventEmitter<boolean> = new EventEmitter<boolean>();
 

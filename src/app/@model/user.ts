@@ -1,6 +1,6 @@
 import { Prime } from '@model';
 
-export class User extends Prime {
+export class User extends Prime<string> {
   constructor(
     createdDate: Date,
     lastModifiedDate: Date,
