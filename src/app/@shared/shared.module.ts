@@ -29,6 +29,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import {
   BasicInputComponent,
   ConfirmDialogComponent,
+  FilterButtonsComponent,
   FilterStatusComponent,
   InfoFieldComponent,
 } from './components';
@@ -44,6 +45,7 @@ export const importModules = [
   MatInputModule,
   MatTooltipModule,
   MatIconModule,
+  RouterModule,
   FormsModule,
   ClipboardModule,
   MatChipsModule,
@@ -84,6 +86,7 @@ export const exportModules = [
 export const components = [
   BasicInputComponent,
   ConfirmDialogComponent,
+  FilterButtonsComponent,
   FilterStatusComponent,
   InfoFieldComponent,
 ];

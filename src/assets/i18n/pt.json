@@ -99,7 +99,9 @@
     "get": "Buscar",
     "ok": "Ok",
     "cancel": "Cancelar",
-    "clear": "Apagar"
+    "clear": "Apagar",
+    "search": "Pesquisar",
+    "new": "Novo"
   },
   "global": {
     "slideToggle": {
