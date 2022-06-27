@@ -13,8 +13,7 @@
   },
   "shared": {
     "confirmMsg": "Tem certeza de que deseja excluir?",
-    "deleteSuccess": "{{ name }} com ID '{{ id }}' removido com sucesso",
-    "changeStatusSuccess": "{{ name }} com ID '{{ id }}': estado alterado com sucesso"
+    "deleteSuccess": "{{ name }} com ID '{{ id }}' removido com sucesso"
   },
   "accessData": {
     "title": "Dados de Acesso",
