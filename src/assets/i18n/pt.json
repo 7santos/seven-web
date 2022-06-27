@@ -11,6 +11,11 @@
     },
     "offline": "Offline"
   },
+  "shared": {
+    "confirmMsg": "Tem certeza de que deseja excluir?",
+    "deleteSuccess": "{{ name }} com ID '{{ id }}' removido com sucesso",
+    "changeStatusSuccess": "{{ name }} com ID '{{ id }}': estado alterado com sucesso"
+  },
   "accessData": {
     "title": "Dados de Acesso",
     "getSuccess": "Dados de Acesso recuperados com sucesso",
@@ -92,7 +97,9 @@
     "status": "Verificar Estado",
     "close": "Fechar",
     "save": "Salvar",
-    "get": "Buscar"
+    "get": "Buscar",
+    "ok": "Ok",
+    "cancel": "Cancelar"
   },
   "global": {
     "slideToggle": {
