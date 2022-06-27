@@ -29,6 +29,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import {
   BasicInputComponent,
   ConfirmDialogComponent,
+  FilterStatusComponent,
   InfoFieldComponent,
 } from './components';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -38,6 +39,7 @@ export const importModules = [
   MatDialogModule,
   MatButtonModule,
   TranslateModule,
+  MatRadioModule,
   ReactiveFormsModule,
   MatInputModule,
   MatTooltipModule,
@@ -82,6 +84,7 @@ export const exportModules = [
 export const components = [
   BasicInputComponent,
   ConfirmDialogComponent,
+  FilterStatusComponent,
   InfoFieldComponent,
 ];
 
