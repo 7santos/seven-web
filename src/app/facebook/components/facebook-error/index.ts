@@ -1,1 +1,1 @@
-export * from './facebook-error.dialog';
+export * from './facebook-error.component';

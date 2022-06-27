@@ -4,7 +4,7 @@ import { AuthAdminGuard } from '@core/guards';
 import { SharedModule } from '@shared';
 import {
   FacebookDeviceComponent,
-  FacebookErrorDialog,
+  FacebookErrorComponent,
   FacebookMeComponent,
   FacebookPageComponent,
 } from './components';
@@ -22,7 +22,7 @@ export const FacebookRoutes: Routes = [
   declarations: [
     FacebookComponent,
     FacebookDeviceComponent,
-    FacebookErrorDialog,
+    FacebookErrorComponent,
     FacebookMeComponent,
     FacebookPageComponent,
   ],
