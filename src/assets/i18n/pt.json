@@ -7,7 +7,8 @@
       "home": "Home",
       "facebook": "Facebook",
       "accessData": "Dados de Acesso",
-      "contact": "Contato"
+      "contact": "Contato",
+      "user": "Usuários"
     },
     "offline": "Offline"
   },
@@ -88,6 +89,9 @@
     "password": "Senha",
     "loginWithGoogle": "Entrar com o Google",
     "success": "Logado com sucesso"
+  },
+  "user": {
+    "listTitle": "Lista de Usuários"
   },
   "button": {
     "signIn": "Entrar",
