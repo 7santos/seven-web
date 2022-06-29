@@ -31,6 +31,7 @@ import {
   ConfirmDialogComponent,
   FilterButtonsComponent,
   FilterStatusComponent,
+  GridActionsComponent,
   InfoFieldComponent,
 } from './components';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -88,6 +89,7 @@ export const components = [
   ConfirmDialogComponent,
   FilterButtonsComponent,
   FilterStatusComponent,
+  GridActionsComponent,
   InfoFieldComponent,
 ];
 

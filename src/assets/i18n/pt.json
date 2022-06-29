@@ -120,6 +120,8 @@
       "active": "Ativo",
       "inactive": "Inativo"
     },
-    "filters": "Filtros"
+    "filters": "Filtros",
+    "edit": "Editar",
+    "delete": "Excluir"
   }
 }
