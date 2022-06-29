@@ -1,0 +1,49 @@
+<form [formGroup]="formGroup" novalidate>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title translate>
+        global.filters
+        <mat-icon
+          routerLink="/user/new"
+          matTooltip="{{ 'button.new' | translate }}"
+          color="primary"
+          >add</mat-icon
+        >
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list cols="3" rowHeight="75">
+      <mat-grid-tile>
+        <app-basic-input
+          [placeholder]="'user.email'"
+          [inputFormControl]="emailFormControl"
+          (restart)="restart.next($event)"
+          (search)="filterSearch()"
+          (clear)="filterClear('email')"
+        ></app-basic-input>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-basic-input
+          [placeholder]="'user.name'"
+          [inputFormControl]="nameFormControl"
+          (restart)="restart.next($event)"
+          (search)="filterSearch()"
+          (clear)="filterClear('name')"
+        ></app-basic-input>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-filter-status
+          [statusFormControl]="enabledFormControl"
+          [translation]="'global.radioButton'"
+          (search)="filterSearch()"
+        ></app-filter-status>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3">
+        <app-filter-buttons
+          [searchDisabled]="formGroup.invalid"
+          (search)="filterSearch()"
+          [link]="'/user/new'"
+        ></app-filter-buttons>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</form>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared';
+import { UserFilterComponent } from './components';
 import { UserListComponent } from './containers';
 
 export const UserRoutes: Routes = [
@@ -19,7 +20,7 @@ export const UserRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [UserListComponent],
+  declarations: [UserListComponent, UserFilterComponent],
   imports: [SharedModule, RouterModule.forChild(UserRoutes)],
 })
 export class UserModule {}

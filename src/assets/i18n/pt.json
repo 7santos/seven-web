@@ -91,7 +91,9 @@
     "success": "Logado com sucesso"
   },
   "user": {
-    "listTitle": "Lista de Usuários"
+    "listTitle": "Lista de Usuários",
+    "email": "E-mail",
+    "name": "Nome"
   },
   "button": {
     "signIn": "Entrar",
@@ -117,6 +119,7 @@
       "both": "Ambos",
       "active": "Ativo",
       "inactive": "Inativo"
-    }
+    },
+    "filters": "Filtros"
   }
 }
