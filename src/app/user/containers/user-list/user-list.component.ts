@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { UserFilter } from '@model';
 import { AppService } from '@service';
+import { UserGridComponent } from '../../components';
 
 @Component({
   selector: 'app-user-list',
@@ -10,8 +11,8 @@ import { AppService } from '@service';
 export class UserListComponent implements OnInit, AfterViewInit {
   userFilter: UserFilter = {} as UserFilter;
 
-  /*@ViewChild(BudgetGridComponent)
-  gridComponent!: BudgetGridComponent;*/
+  @ViewChild(UserGridComponent)
+  gridComponent!: UserGridComponent;
 
   constructor(private appService: AppService) {}
 
@@ -21,7 +22,7 @@ export class UserListComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.appService.setTitle('user.listTitle');
-    // this.gridComponent.search();
+    this.gridComponent.search();
   }
 
   valueChanges(userFilter: UserFilter): void {

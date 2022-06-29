@@ -42,7 +42,7 @@
     "collapseAll": "Retrair Todos",
     "device": {
       "title": "Dispositivo",
-      "description": "Conectar e verificar estado",
+      "description": "Conectar e verificar status",
       "code": "Código",
       "userCode": "Código do Usuário",
       "verificationUri": "URI de Verificação",
@@ -50,7 +50,7 @@
       "interval": "Intervalo (segundos)",
       "loginSuccess": "Dispositivo conectado com sucesso",
       "expirationTime": "Data de Validade",
-      "loginStatusSuccess": "Estado verificado com sucesso"
+      "loginStatusSuccess": "Status verificado com sucesso"
     },
     "error": {
       "title": "Erro",
@@ -93,13 +93,16 @@
   "user": {
     "listTitle": "Lista de Usuários",
     "email": "E-mail",
-    "name": "Nome"
+    "name": "Nome",
+    "enabled": "Status",
+    "createdDate": "Criado em",
+    "lastModifiedDate": "Atualizado em"
   },
   "button": {
     "signIn": "Entrar",
     "copy": "Copiar",
     "login": "Conectar",
-    "status": "Verificar Estado",
+    "status": "Verificar Status",
     "close": "Fechar",
     "save": "Salvar",
     "get": "Buscar",
@@ -111,8 +114,8 @@
   },
   "global": {
     "slideToggle": {
-      "true": "Sim",
-      "false": "Não"
+      "true": "Ativo",
+      "false": "Inativo"
     },
     "saveSuccess": "Salvado com sucesso",
     "radioButton": {
@@ -122,6 +125,7 @@
     },
     "filters": "Filtros",
     "edit": "Editar",
-    "delete": "Excluir"
+    "delete": "Excluir",
+    "noData": "Sem dados"
   }
 }

@@ -11,3 +11,4 @@ export * from './page.service';
 export * from './permission.service';
 export * from './toast.service';
 export * from './token-storage.service';
+export * from './user.service';

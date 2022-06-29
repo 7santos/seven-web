@@ -1,1 +1,6 @@
-<app-user-filter (valueChanges)="valueChanges($event)"></app-user-filter>
+<app-user-filter
+  (restart)="gridComponent.reset($event)"
+  (search)="gridComponent.search()"
+  (valueChanges)="valueChanges($event)"
+></app-user-filter>
+<app-user-grid [value]="userFilter"></app-user-grid>
