@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User, UserFilter } from '@model';
 import { ToastService, UserService } from '@service';
 import { BaseFormDirective } from '@shared';
+import { AppConstants } from 'src/app/app-constants';
 
 @Component({
   selector: 'app-user-form',
@@ -33,9 +34,15 @@ export class UserFormComponent
       this.defaultValues.enabled == null ? true : this.defaultValues.enabled;
 
     this.formGroup = this.formBuilder.group({
-      name: [this.defaultValues.name],
-      email: [this.defaultValues.email],
-      enabled: [enabledDefaultValue],
+      name: [
+        this.defaultValues.name,
+        [Validators.required, Validators.maxLength(AppConstants.LENGTH_250)],
+      ],
+      email: [
+        this.defaultValues.email,
+        [Validators.required, Validators.pattern(AppConstants.EMAIL_PATTERN)],
+      ],
+      enabled: [enabledDefaultValue, [Validators.required]],
     });
   }
 }

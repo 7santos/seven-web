@@ -6,21 +6,21 @@ import {
   UserFormComponent,
   UserGridComponent,
 } from './components';
-import { UserListComponent } from './containers';
+import { UserCreationComponent, UserListComponent } from './containers';
 
 export const UserRoutes: Routes = [
   {
     path: '',
     component: UserListComponent,
   },
-  /*{
+  {
     path: 'new',
-    component: BudgetCreationComponent,
+    component: UserCreationComponent,
   },
   {
     path: ':id/edit',
-    component: BudgetCreationComponent,
-  },*/
+    component: UserCreationComponent,
+  },
 ];
 
 @NgModule({
@@ -29,6 +29,7 @@ export const UserRoutes: Routes = [
     UserFilterComponent,
     UserGridComponent,
     UserFormComponent,
+    UserCreationComponent,
   ],
   imports: [SharedModule, RouterModule.forChild(UserRoutes)],
 })

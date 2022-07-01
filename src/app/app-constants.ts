@@ -8,6 +8,9 @@ export class AppConstants {
   public static PHONE_PATTERN: RegExp =
     /^(\([0-9]{2}\)\s?[0-9]{4,5}[- ]?[0-9]{3,4})|([0-9]{2}\s?[0-9]{4,5}[- ]?[0-9]{3,4})|([0-9]{4,5}[- ]?[0-9]{3,4})$/gm;
 
+  public static EMAIL_PATTERN: RegExp =
+    /^[a-zA-Z\d_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z\d.-]+$/gm;
+
   public static LENGTH_3 = 3;
   public static LENGTH_250 = 250;
   public static LENGTH_320 = 320;

@@ -96,7 +96,8 @@
     "name": "Nome",
     "enabled": "Status",
     "createdDate": "Criado em",
-    "lastModifiedDate": "Atualizado em"
+    "lastModifiedDate": "Atualizado em",
+    "formTitle": "Salvar Usuário"
   },
   "button": {
     "signIn": "Entrar",
