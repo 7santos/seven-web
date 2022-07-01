@@ -110,7 +110,8 @@
     "cancel": "Cancelar",
     "clear": "Apagar",
     "search": "Pesquisar",
-    "new": "Novo"
+    "new": "Novo",
+    "back": "Voltar"
   },
   "global": {
     "slideToggle": {

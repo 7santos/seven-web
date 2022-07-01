@@ -31,6 +31,7 @@ import {
   ConfirmDialogComponent,
   FilterButtonsComponent,
   FilterStatusComponent,
+  FormButtonsComponent,
   GridActionsComponent,
   InfoFieldComponent,
 } from './components';
@@ -89,6 +90,7 @@ export const components = [
   ConfirmDialogComponent,
   FilterButtonsComponent,
   FilterStatusComponent,
+  FormButtonsComponent,
   GridActionsComponent,
   InfoFieldComponent,
 ];
