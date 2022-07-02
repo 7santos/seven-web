@@ -9,7 +9,7 @@
 }
 
 .default-input-width {
-  width: 400px;
+  width: 20vw;
 }
 
 mat-grid-list {
@@ -40,4 +40,14 @@ mat-radio-button {
 
 .margin-top-1em {
   margin-top: 1em;
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
 }

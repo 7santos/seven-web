@@ -8,7 +8,7 @@ import {
 
 export class Contact {
   constructor(
-    public id: number,
+    public id: string,
     public name: string,
     public source: ContactSource,
     public status: ContactStatus,

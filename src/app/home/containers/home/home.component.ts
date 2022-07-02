@@ -11,5 +11,6 @@ export class HomeComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.appService.setTitle('home.title');
+    this.appService.setShowHeader(true);
   }
 }

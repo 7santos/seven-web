@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { FacebookLogin, FieldType, LoginStatus } from '@model';
 import { DeviceService, ToastService } from '@service';
 import { MatDialog } from '@angular/material/dialog';
-import { FacebookErrorDialog } from '..';
+import { FacebookErrorComponent } from '..';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -56,7 +56,7 @@ export class FacebookDeviceComponent implements OnDestroy {
   }
 
   openErrorDialog(): void {
-    this.dialog.open(FacebookErrorDialog, {
+    this.dialog.open(FacebookErrorComponent, {
       data: this.loginStatus.error,
     });
   }

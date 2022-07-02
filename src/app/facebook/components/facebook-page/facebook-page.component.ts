@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Page } from '@model';
+import { FacebookPage } from '@model';
 import { PageService, ToastService } from '@service';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -11,7 +11,7 @@ import { Subject, takeUntil } from 'rxjs';
 export class FacebookPageComponent implements OnDestroy {
   private unsubscribe$ = new Subject<void>();
 
-  page = Page.empty();
+  page = FacebookPage.empty();
 
   constructor(
     private pageService: PageService,

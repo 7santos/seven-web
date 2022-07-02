@@ -25,6 +25,8 @@ export class AppComponent implements OnInit, AfterContentInit, OnDestroy {
 
   permission: Permission = new Permission(false, false, false, '');
 
+  showHeader: boolean = true;
+
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
   constructor(
@@ -50,6 +52,11 @@ export class AppComponent implements OnInit, AfterContentInit, OnDestroy {
       .subscribe((permission) => {
         this.permission = permission;
       });
+
+    this.appService
+      .getShowHeader()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((showHeader) => (this.showHeader = showHeader));
   }
 
   ngAfterContentInit(): void {

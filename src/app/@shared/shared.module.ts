@@ -26,16 +26,28 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ClipboardModule } from 'ngx-clipboard';
-import { InfoFieldComponent } from './components';
+import {
+  BasicInputComponent,
+  ConfirmDialogComponent,
+  FilterButtonsComponent,
+  FilterStatusComponent,
+  FormButtonsComponent,
+  GridActionsComponent,
+  InfoFieldComponent,
+} from './components';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 export const importModules = [
   CommonModule,
+  MatDialogModule,
   MatButtonModule,
   TranslateModule,
+  MatRadioModule,
+  ReactiveFormsModule,
   MatInputModule,
   MatTooltipModule,
   MatIconModule,
+  RouterModule,
   FormsModule,
   ClipboardModule,
   MatChipsModule,
@@ -73,7 +85,15 @@ export const exportModules = [
   MatProgressBarModule,
 ];
 
-export const components = [InfoFieldComponent];
+export const components = [
+  BasicInputComponent,
+  ConfirmDialogComponent,
+  FilterButtonsComponent,
+  FilterStatusComponent,
+  FormButtonsComponent,
+  GridActionsComponent,
+  InfoFieldComponent,
+];
 
 @NgModule({
   imports: [...importModules],

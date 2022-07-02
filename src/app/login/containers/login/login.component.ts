@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.appService.setTitle('login.title');
+    this.appService.setShowHeader(true);
   }
 
   ngOnDestroy(): void {

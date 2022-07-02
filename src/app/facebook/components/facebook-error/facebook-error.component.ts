@@ -4,9 +4,9 @@ import { FacebookError } from '@model';
 
 @Component({
   selector: 'app-facebook-error',
-  templateUrl: './facebook-error.dialog.html',
-  styleUrls: ['./facebook-error.dialog.css'],
+  templateUrl: './facebook-error.component.html',
+  styleUrls: ['./facebook-error.component.css'],
 })
-export class FacebookErrorDialog {
+export class FacebookErrorComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public facebookError: FacebookError) {}
 }

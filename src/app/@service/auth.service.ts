@@ -2,13 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { Login, SocialProvider } from '@model';
-import { ApiService } from '@service/api.service';
+import { BasicApiService } from '@service/basic-api.service';
 import { Observable } from 'rxjs';
 import { AppConstants } from 'src/app/app-constants';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
-export class AuthService extends ApiService {
+export class AuthService extends BasicApiService {
   constructor(protected http: HttpClient, private domSanitizer: DomSanitizer) {
     super(http, 'auth/');
   }

@@ -1,6 +1,6 @@
 export class AccessData {
   constructor(
-    public id: number,
+    public id: string,
     public name: string,
     public expirationEpoch: number,
     public expirationDate: Date,
@@ -12,7 +12,7 @@ export class AccessData {
 
   static empty(): AccessData {
     return new AccessData(
-      -1,
+      '',
       '',
       -1,
       new Date(),

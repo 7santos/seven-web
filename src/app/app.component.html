@@ -1,11 +1,11 @@
 <mat-progress-bar
   mode="indeterminate"
-  *ngIf="loaderService.isLoading | async"
+  *ngIf="loaderService.getLoading() | async"
   color="accent"
 ></mat-progress-bar>
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" *ngIf="showHeader">
   <mat-toolbar-row>
-    <img src="assets/images/logo.png" class="logo" />
+    <!-- img src="assets/images/logo.png" class="logo" /-->
     <span translate>app.title</span>
     <button mat-icon-button *ngIf="permission.isAuthenticated">
       <mat-icon
@@ -35,7 +35,7 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container>
-  <mat-sidenav #sidenav>
+  <mat-sidenav #sidenav *ngIf="showHeader">
     <mat-nav-list>
       <a mat-list-item (click)="navigate('/home')" *ngIf="permission.isUser">{{
         "app.menu.home" | translate
@@ -52,10 +52,16 @@
         *ngIf="permission.isAdmin"
         >{{ "app.menu.accessData" | translate }}</a
       >
+      <a mat-list-item (click)="navigate('/contact')" *ngIf="permission.isUser">
+        {{ "app.menu.contact" | translate }}
+      </a>
+      <a mat-list-item (click)="navigate('/user')" *ngIf="permission.isAdmin">
+        {{ "app.menu.user" | translate }}
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div class="content">
+    <div class="{{ showHeader ? 'content' : 'content-no-header' }}">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
