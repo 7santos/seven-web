@@ -8,8 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "ng build --aot",
-    "lint": "ng lint",
-    "preinstall": "npm config set package-lock false"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
