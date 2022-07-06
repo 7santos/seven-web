@@ -1,6 +1,7 @@
 export * from './enum/contact-source';
 export * from './enum/contact-status';
 export * from './enum/contact-type';
+export * from './enum/email-type';
 export * from './enum/field-type';
 export * from './enum/role';
 export * from './enum/social-provider';
