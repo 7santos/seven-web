@@ -13,6 +13,7 @@ export * from './facebook/facebook-login';
 export * from './facebook/login-status';
 export * from './facebook/facebook-page';
 
+export * from './filter/email-filter';
 export * from './filter/user-filter';
 
 export * from './page/page';
