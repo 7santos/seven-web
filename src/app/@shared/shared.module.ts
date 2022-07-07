@@ -28,6 +28,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ClipboardModule } from 'ngx-clipboard';
 import {
   BasicInputComponent,
+  BasicSelectComponent,
   ConfirmDialogComponent,
   FilterButtonsComponent,
   FilterStatusComponent,
@@ -51,6 +52,7 @@ export const importModules = [
   FormsModule,
   ClipboardModule,
   MatChipsModule,
+  MatSelectModule,
 ];
 
 export const exportModules = [
@@ -87,6 +89,7 @@ export const exportModules = [
 
 export const components = [
   BasicInputComponent,
+  BasicSelectComponent,
   ConfirmDialogComponent,
   FilterButtonsComponent,
   FilterStatusComponent,

@@ -1,4 +1,5 @@
 export * from './basic-input';
+export * from './basic-select';
 export * from './confirm-dialog';
 export * from './filter-buttons';
 export * from './filter-status';
