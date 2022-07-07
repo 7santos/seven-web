@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared';
+import { EmailFilterComponent } from './components';
 
 export const EmailRoutes: Routes = [
   {
@@ -10,7 +11,7 @@ export const EmailRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [EmailFilterComponent],
   imports: [SharedModule, RouterModule.forChild(EmailRoutes)],
 })
 export class EmailModule {}

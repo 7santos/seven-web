@@ -1,0 +1,40 @@
+<form [formGroup]="formGroup" novalidate>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title translate> global.filters </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list cols="3" rowHeight="75">
+      <mat-grid-tile>
+        <app-basic-select
+          [label]="'email.emailType'"
+          [selectFormControl]="emailTypeFormControl"
+          [values]="emailTypes"
+          (selectionChange)="filterSearch()"
+        ></app-basic-select>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-basic-select
+          [label]="'email.emailStatus'"
+          [selectFormControl]="emailStatusFormControl"
+          [values]="emailStatuses"
+          (selectionChange)="filterSearch()"
+        ></app-basic-select>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-basic-input
+          [placeholder]="'email.to'"
+          [inputFormControl]="toFormControl"
+          (restart)="restart.next($event)"
+          (search)="filterSearch()"
+          (clear)="filterClear('to')"
+        ></app-basic-input>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3">
+        <app-filter-buttons
+          [searchDisabled]="formGroup.invalid"
+          (search)="filterSearch()"
+        ></app-filter-buttons>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</form>
