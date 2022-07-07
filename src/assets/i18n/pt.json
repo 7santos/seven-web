@@ -41,7 +41,10 @@
     "emailType": "Tipo de E-mail",
     "emailStatus": "Status do E-mail",
     "to": "Destinatário",
-    "listTitle": "Lista de E-mails"
+    "listTitle": "Lista de E-mails",
+    "sentDate": "Data de Envio",
+    "subject": "Assunto",
+    "text": "Texto"
   },
   "facebook": {
     "title": "Facebook",

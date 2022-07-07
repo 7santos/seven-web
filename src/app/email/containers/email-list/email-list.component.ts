@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { EmailFilter } from '@model';
 import { AppService } from '@service';
+import { EmailGridComponent } from '../../components';
 
 @Component({
   selector: 'app-email-list',
@@ -10,8 +11,8 @@ import { AppService } from '@service';
 export class EmailListComponent implements OnInit, AfterViewInit {
   emailFilter: EmailFilter = {} as EmailFilter;
 
-  // @ViewChild(UserGridComponent)
-  // gridComponent!: UserGridComponent;
+  @ViewChild(EmailGridComponent)
+  gridComponent!: EmailGridComponent;
 
   constructor(private appService: AppService) {}
 
@@ -21,7 +22,7 @@ export class EmailListComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.appService.setTitle('email.listTitle');
-    // this.gridComponent.search();
+    this.gridComponent.search();
   }
 
   valueChanges(emailFilter: EmailFilter): void {

@@ -1,0 +1,69 @@
+<div class="mat-elevation-z8">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    (matSortChange)="sort($event)"
+  >
+    <!-- 1: SENT DATE -->
+    <ng-container matColumnDef="sentDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "email.sentDate" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.sentDate | date: "yyyy-MM-dd HH:mm:ss" }}
+      </td>
+    </ng-container>
+    <!-- 2: EMAIL TYPE -->
+    <ng-container matColumnDef="emailType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "email.emailType" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.emailType }}</td>
+    </ng-container>
+    <!-- 3: EMAIL STATUS -->
+    <ng-container matColumnDef="emailStatus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "email.emailStatus" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.emailStatus }}</td>
+    </ng-container>
+    <!-- 4: TO -->
+    <ng-container matColumnDef="to">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "email.to" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.to }}</td>
+    </ng-container>
+    <!-- 5: SUBJECT -->
+    <ng-container matColumnDef="subject">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "email.subject" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.subject }}</td>
+    </ng-container>
+    <!-- 6: TEXT -->
+    <ng-container matColumnDef="text">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ "email.text" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.text }}</td>
+    </ng-container>
+    <!-- 7: CONFIG -->
+    <ng-container matColumnDef="config">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="7" translate>global.noData</td>
+    </tr>
+  </table>
+  <mat-paginator
+    [length]="length"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="page($event)"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>
