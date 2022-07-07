@@ -23,6 +23,7 @@ export * from './access-data';
 export * from './audit';
 export * from './contact-info';
 export * from './contact';
+export * from './email';
 export * from './jwt-payload';
 export * from './login';
 export * from './permission';
