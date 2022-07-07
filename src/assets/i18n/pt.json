@@ -36,6 +36,12 @@
       "success": "Contato registado com sucesso! Em poucos minutos irá receber uma mensagem de um dos nossos consultores."
     }
   },
+  "email": {
+    "emailType": "Tipo de E-mail",
+    "emailStatus": "Status do E-mail",
+    "to": "Destinatário",
+    "listTitle": "Lista de E-mails"
+  },
   "facebook": {
     "title": "Facebook",
     "expandAll": "Expandir Todos",
