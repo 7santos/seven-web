@@ -58,6 +58,9 @@
       <a mat-list-item (click)="navigate('/user')" *ngIf="permission.isAdmin">
         {{ "app.menu.user" | translate }}
       </a>
+      <a mat-list-item (click)="navigate('/email')" *ngIf="permission.isAdmin">
+        {{ "app.menu.email" | translate }}
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -32,6 +32,11 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   },
+  {
+    path: 'email',
+    loadChildren: () =>
+      import('./email/email.module').then((m) => m.EmailModule),
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

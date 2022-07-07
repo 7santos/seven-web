@@ -10,6 +10,8 @@ export class FilterButtonsComponent {
 
   @Input() link: string = '';
 
+  @Input() showNewButton: boolean = true;
+
   @Output() search: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() {}

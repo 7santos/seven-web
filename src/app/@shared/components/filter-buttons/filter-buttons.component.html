@@ -7,4 +7,4 @@
   {{ "button.search" | translate }}
 </button>
 &nbsp;
-<a mat-raised-button [routerLink]="link">{{ "button.new" | translate }}</a>
+<a mat-raised-button [routerLink]="link" *ngIf="showNewButton">{{ "button.new" | translate }}</a>

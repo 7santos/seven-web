@@ -1,3 +1,16 @@
+export * from './audit';
+export * from './prime';
+
+export * from './access-data';
+export * from './contact-info';
+export * from './contact';
+export * from './email';
+export * from './jwt-payload';
+export * from './login';
+export * from './permission';
+export * from './simple-contact';
+export * from './user';
+
 export * from './enum/contact-source';
 export * from './enum/contact-status';
 export * from './enum/contact-type';
@@ -19,15 +32,3 @@ export * from './filter/user-filter';
 export * from './page/page';
 export * from './page/pageable';
 export * from './page/sort';
-
-export * from './access-data';
-export * from './audit';
-export * from './contact-info';
-export * from './contact';
-export * from './email';
-export * from './jwt-payload';
-export * from './login';
-export * from './permission';
-export * from './prime';
-export * from './simple-contact';
-export * from './user';
