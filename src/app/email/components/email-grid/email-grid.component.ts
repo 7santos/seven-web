@@ -3,7 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Email, EmailFilter } from '@model';
 import { EmailService, ToastService } from '@service';
-import { BaseListDirective } from '@shared';
+import { BaseListDirective, ConfirmDialogComponent } from '@shared';
+import { takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-email-grid',
@@ -37,5 +38,26 @@ export class EmailGridComponent extends BaseListDirective<
       active: 'sentDate',
       direction: 'desc',
     };
+  }
+
+  resend(id: string): void {
+    const dialogRef = this.matDialog.open(ConfirmDialogComponent, {
+      data: { message: 'email.resendMsg' },
+      disableClose: true,
+    });
+
+    dialogRef
+      .afterClosed()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((confirmed: boolean) => {
+        if (confirmed) {
+          this.apiService
+            .put(id, {} as Email)
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe(() => {
+              this.toastService.showSuccess('email.resendOK');
+            });
+        }
+      });
   }
 }

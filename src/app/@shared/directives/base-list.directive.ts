@@ -22,7 +22,7 @@ export abstract class BaseListDirective<E extends Prime<ID>, F, ID>
 {
   readonly pageSizeOptions = AppConstants.PAGE_SIZE_OPTIONS;
 
-  private unsubscribe$ = new Subject<void>();
+  protected unsubscribe$ = new Subject<void>();
 
   private defaultPageEvent: PageEvent = {
     pageIndex: 0,
@@ -50,9 +50,9 @@ export abstract class BaseListDirective<E extends Prime<ID>, F, ID>
   constructor(
     private name: string,
     private router: Router,
-    private matDialog: MatDialog,
-    private apiService: ApiService<E, F, ID>,
-    private toastService: ToastService
+    protected matDialog: MatDialog,
+    protected apiService: ApiService<E, F, ID>,
+    protected toastService: ToastService
   ) {}
 
   ngOnDestroy(): void {
@@ -90,7 +90,10 @@ export abstract class BaseListDirective<E extends Prime<ID>, F, ID>
   }
 
   delete(id: ID): void {
-    const dialogRef = this.matDialog.open(ConfirmDialogComponent);
+    const dialogRef = this.matDialog.open(ConfirmDialogComponent, {
+      data: { message: 'shared.confirmMsg' },
+      disableClose: true,
+    });
 
     dialogRef
       .afterClosed()

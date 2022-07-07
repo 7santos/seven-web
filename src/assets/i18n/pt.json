@@ -44,7 +44,10 @@
     "listTitle": "Lista de E-mails",
     "sentDate": "Data de Envio",
     "subject": "Assunto",
-    "text": "Texto"
+    "text": "Texto",
+    "resend": "Reenviar",
+    "resendMsg": "Deseja reenviar o e-mail?",
+    "resendOK": "O reenvio do e-mail foi cadastrado com sucesso!"
   },
   "facebook": {
     "title": "Facebook",
