@@ -40,7 +40,7 @@
         {{ "user.createdDate" | translate }}
       </th>
       <td mat-cell *matCellDef="let element">
-        {{ element.createdDate | date: "yyyy-MM-dd HH:mm:ss" }}
+        {{ element.createdDate | appDate }}
       </td>
     </ng-container>
     <!-- LAST MODIFIED DATE -->
@@ -49,7 +49,7 @@
         {{ "user.lastModifiedDate" | translate }}
       </th>
       <td mat-cell *matCellDef="let element">
-        {{ element.lastModifiedDate | date: "yyyy-MM-dd HH:mm:ss" }}
+        {{ element.lastModifiedDate | appDate }}
       </td>
     </ng-container>
     <!-- CONFIG -->

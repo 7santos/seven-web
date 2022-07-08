@@ -11,7 +11,7 @@
         {{ "email.sentDate" | translate }}
       </th>
       <td mat-cell *matCellDef="let element">
-        {{ element.sentDate | date: "yyyy-MM-dd HH:mm:ss" }}
+        {{ element.sentDate | appDate }}
       </td>
     </ng-container>
     <!-- 2: EMAIL TYPE -->

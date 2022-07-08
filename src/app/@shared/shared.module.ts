@@ -37,6 +37,7 @@ import {
   InfoFieldComponent,
 } from './components';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { AppDatePipe } from './pipes';
 
 export const importModules = [
   CommonModule,
@@ -98,10 +99,12 @@ export const components = [
   InfoFieldComponent,
 ];
 
+export const pipes = [AppDatePipe];
+
 @NgModule({
   imports: [...importModules],
-  exports: [...exportModules, ...components],
-  declarations: [...components],
+  exports: [...exportModules, ...components, ...pipes],
+  declarations: [...components, ...pipes],
   providers: [],
 })
 export class SharedModule {}
