@@ -55,6 +55,14 @@ export abstract class ApiService<E extends Prime<ID>, F, ID> {
     );
   }
 
+  patchAny(id: ID, body: any): Observable<void> {
+    return this.httpClient.patch<void>(
+      `${environment.apiUri}${this.baseUrl}${id}`,
+      body,
+      {}
+    );
+  }
+
   private getHttpParams(
     queryParams: QueryParams,
     pageEvent: PageEvent,

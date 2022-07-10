@@ -2,6 +2,7 @@ export * from './audit';
 export * from './prime';
 
 export * from './access-data';
+export * from './change-password';
 export * from './confirm-dialog-data';
 export * from './contact-info';
 export * from './contact';
