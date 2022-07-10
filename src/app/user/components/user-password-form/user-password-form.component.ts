@@ -1,5 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup, Validators
+} from '@angular/forms';
 import { ChangePassword } from '@model';
 import { PermissionService, ToastService, UserService } from '@service';
 import { Subject, takeUntil } from 'rxjs';
@@ -14,6 +18,12 @@ export class UserPasswordFormComponent implements OnInit, OnDestroy {
 
   formGroup: FormGroup = new FormGroup({});
 
+  oldPasswordFormControl = new FormControl('', [Validators.required]);
+
+  newPasswordFormControl = new FormControl('', [Validators.required]);
+
+  confirmPasswordFormControl = new FormControl('', [Validators.required]);
+
   constructor(
     private formBuilder: FormBuilder,
     private permissionService: PermissionService,
@@ -23,9 +33,9 @@ export class UserPasswordFormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      oldPassword: [''],
-      newPassword: [''],
-      confirmPassword: [''],
+      oldPassword: this.oldPasswordFormControl,
+      newPassword: this.newPasswordFormControl,
+      confirmPassword: this.confirmPasswordFormControl,
     });
   }
 

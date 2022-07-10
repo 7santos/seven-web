@@ -11,6 +11,9 @@ export class AppConstants {
   public static EMAIL_PATTERN: RegExp =
     /^[a-zA-Z\d_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z\d.-]+$/gm;
 
+  public static PASSWORD_PATTERN: RegExp =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()-\[{}\]:;',?/*~$^+=<>]).{8,20}$/gm;
+
   public static LENGTH_3 = 3;
   public static LENGTH_250 = 250;
   public static LENGTH_320 = 320;
