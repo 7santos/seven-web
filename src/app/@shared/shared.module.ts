@@ -35,6 +35,7 @@ import {
   FormButtonsComponent,
   GridActionsComponent,
   InfoFieldComponent,
+  PasswordInputComponent,
 } from './components';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppDatePipe } from './pipes';
@@ -97,6 +98,7 @@ export const components = [
   FormButtonsComponent,
   GridActionsComponent,
   InfoFieldComponent,
+  PasswordInputComponent,
 ];
 
 export const pipes = [AppDatePipe];

@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { SafeUrl } from '@angular/platform-browser';
 import { Login } from '@model';
 
@@ -10,6 +15,8 @@ import { Login } from '@model';
 })
 export class LoginFormComponent {
   formGroup: FormGroup;
+
+  passwordFormControl = new FormControl('', [Validators.required]);
 
   @Input() googleLoginUrl: SafeUrl = '';
 
@@ -22,7 +29,7 @@ export class LoginFormComponent {
   private buildForm(): FormGroup {
     return this.formBuilder.group({
       email: ['', Validators.required],
-      password: ['', Validators.required],
+      password: this.passwordFormControl,
     });
   }
 

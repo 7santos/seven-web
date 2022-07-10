@@ -6,3 +6,4 @@ export * from './filter-status';
 export * from './form-buttons';
 export * from './grid-actions';
 export * from './info-field';
+export * from './password-input';
