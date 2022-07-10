@@ -24,6 +24,11 @@
     <span class="toolbar-spacer"></span>
     <span *ngIf="permission.isAuthenticated">{{ permission.username }}</span>
     <button mat-icon-button *ngIf="permission.isAuthenticated">
+      <mat-icon routerLink="/user/change-password" matTooltip="{{ 'app.changePassword' | translate }}" color="accent">
+        settings
+      </mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="permission.isAuthenticated">
       <mat-icon
         (click)="logOut()"
         matTooltip="{{ 'app.logout' | translate }}"

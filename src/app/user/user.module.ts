@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthAdminGuard } from '@core';
+import { AuthAdminGuard, AuthUserGuard } from '@core';
 import { SharedModule } from '@shared';
 import {
   UserFilterComponent,
@@ -8,7 +8,11 @@ import {
   UserGridComponent,
   UserPasswordFormComponent,
 } from './components';
-import { UserCreationComponent, UserListComponent } from './containers';
+import {
+  UserCreationComponent,
+  UserListComponent,
+  UserPasswordComponent,
+} from './containers';
 
 export const UserRoutes: Routes = [
   {
@@ -20,6 +24,11 @@ export const UserRoutes: Routes = [
     path: 'new',
     canActivate: [AuthAdminGuard],
     component: UserCreationComponent,
+  },
+  {
+    path: 'change-password',
+    canActivate: [AuthUserGuard],
+    component: UserPasswordComponent,
   },
   {
     path: ':id/edit',
@@ -36,6 +45,7 @@ export const UserRoutes: Routes = [
     UserFormComponent,
     UserCreationComponent,
     UserPasswordFormComponent,
+    UserPasswordComponent,
   ],
   imports: [SharedModule, RouterModule.forChild(UserRoutes)],
 })

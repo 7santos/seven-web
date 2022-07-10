@@ -11,7 +11,8 @@
       "user": "Usuários",
       "email": "E-mail"
     },
-    "offline": "Offline"
+    "offline": "Offline",
+    "changePassword": "Alterar Senha"
   },
   "shared": {
     "confirmMsg": "Tem certeza de que deseja excluir?",
@@ -114,7 +115,8 @@
     "passwordChanged": "Senha alterada com sucesso",
     "oldPassword": "Senha Antiga",
     "newPassword": "Nova Senha",
-    "confirmPassword": "Confirmar Senha"
+    "confirmPassword": "Confirmar Senha",
+    "changePassWordTitle": "Alterar Senha"
   },
   "button": {
     "signIn": "Entrar",
