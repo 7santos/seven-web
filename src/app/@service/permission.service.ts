@@ -63,6 +63,11 @@ export class PermissionService {
     return payload?.name ? payload.name : '';
   }
 
+  getSub(): string {
+    const payload = this.getPayload();
+    return payload?.sub ? payload.sub : '';
+  }
+
   private hasRole(role: Role): boolean {
     if (!this.isLoggedIn()) {
       return false;

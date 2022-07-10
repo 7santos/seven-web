@@ -110,7 +110,11 @@
     "enabled": "Status",
     "createdDate": "Criado em",
     "lastModifiedDate": "Atualizado em",
-    "formTitle": "Salvar Usuário"
+    "formTitle": "Salvar Usuário",
+    "passwordChanged": "Senha alterada com sucesso",
+    "oldPassword": "Senha Antiga",
+    "newPassword": "Nova Senha",
+    "confirmPassword": "Confirmar Senha"
   },
   "button": {
     "signIn": "Entrar",

@@ -6,6 +6,7 @@ import {
   UserFilterComponent,
   UserFormComponent,
   UserGridComponent,
+  UserPasswordFormComponent,
 } from './components';
 import { UserCreationComponent, UserListComponent } from './containers';
 
@@ -34,6 +35,7 @@ export const UserRoutes: Routes = [
     UserGridComponent,
     UserFormComponent,
     UserCreationComponent,
+    UserPasswordFormComponent,
   ],
   imports: [SharedModule, RouterModule.forChild(UserRoutes)],
 })
