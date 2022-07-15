@@ -10,6 +10,7 @@ export * from './email';
 export * from './jwt-payload';
 export * from './login';
 export * from './permission';
+export * from './seller';
 export * from './simple-contact';
 export * from './user';
 
@@ -29,6 +30,7 @@ export * from './facebook/login-status';
 export * from './facebook/facebook-page';
 
 export * from './filter/email-filter';
+export * from './filter/seller-filter';
 export * from './filter/user-filter';
 
 export * from './page/page';
