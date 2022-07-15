@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from '@core';
 import { SharedModule } from '@shared';
+import { SellerFilterComponent } from './components';
 
 export const SellerRoutes: Routes = [
   /*{
@@ -22,7 +23,7 @@ export const SellerRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [SellerFilterComponent],
   imports: [SharedModule, RouterModule.forChild(SellerRoutes)],
 })
 export class SellerModule {}

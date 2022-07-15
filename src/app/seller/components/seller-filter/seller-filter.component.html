@@ -1,0 +1,27 @@
+<form [formGroup]="formGroup" novalidate>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title translate>
+                global.filters
+                <mat-icon routerLink="/seller/new" matTooltip="{{ 'button.new' | translate }}" color="primary">add
+                </mat-icon>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-grid-list cols="2" rowHeight="75">
+            <mat-grid-tile>
+                <app-basic-input [placeholder]="'seller.name'" [inputFormControl]="nameFormControl"
+                    (restart)="restart.next($event)" (search)="filterSearch()" (clear)="filterClear('name')">
+                </app-basic-input>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <app-filter-status [statusFormControl]="activeFormControl" [translation]="'global.radioButton'"
+                    (search)="filterSearch()"></app-filter-status>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+                <app-filter-buttons [searchDisabled]="formGroup.invalid" (search)="filterSearch()"
+                    [link]="'/seller/new'">
+                </app-filter-buttons>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-expansion-panel>
+</form>

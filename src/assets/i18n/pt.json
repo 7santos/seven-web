@@ -104,6 +104,9 @@
     "loginWithGoogle": "Entrar com o Google",
     "success": "Logado com sucesso"
   },
+  "seller": {
+    "name": "Vendedor"
+  },
   "user": {
     "listTitle": "Lista de Usuários",
     "email": "E-mail",
