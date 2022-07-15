@@ -3,14 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from '@core';
 import { SharedModule } from '@shared';
 import { SellerFilterComponent, SellerGridComponent } from './components';
+import { SellerListComponent } from './containers';
 
 export const SellerRoutes: Routes = [
-  /*{
+  {
     path: '',
     canActivate: [AuthAdminGuard],
-    component: UserListComponent,
+    component: SellerListComponent,
   },
-  {
+  /*{
     path: 'new',
     canActivate: [AuthAdminGuard],
     component: UserCreationComponent,
@@ -23,7 +24,11 @@ export const SellerRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SellerFilterComponent, SellerGridComponent],
+  declarations: [
+    SellerFilterComponent,
+    SellerGridComponent,
+    SellerListComponent,
+  ],
   imports: [SharedModule, RouterModule.forChild(SellerRoutes)],
 })
 export class SellerModule {}

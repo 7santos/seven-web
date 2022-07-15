@@ -109,7 +109,8 @@
     "user": "E-mail",
     "active": "Status",
     "createdDate": "Criado em",
-    "lastModifiedDate": "Atualizado em"
+    "lastModifiedDate": "Atualizado em",
+    "listTitle": "Lista de Vendedores"
   },
   "user": {
     "listTitle": "Lista de Usuários",

@@ -1,0 +1,3 @@
+<app-seller-filter (restart)="gridComponent.reset($event)" (search)="gridComponent.search()"
+    (valueChanges)="valueChanges($event)"></app-seller-filter>
+<app-seller-grid [value]="sellerFilter"></app-seller-grid>
