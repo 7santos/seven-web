@@ -9,7 +9,8 @@
       "accessData": "Dados de Acesso",
       "contact": "Contato",
       "user": "Usuários",
-      "email": "E-mail"
+      "email": "E-mail",
+      "seller": "Vendedores"
     },
     "offline": "Offline",
     "changePassword": "Alterar Senha"

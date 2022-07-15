@@ -9,7 +9,7 @@
         </ng-container>
         <!-- USER -->
         <ng-container matColumnDef="user">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="user.email">
                 {{ "seller.user" | translate }}
             </th>
             <td mat-cell *matCellDef="let element">{{ element.user ? element.user.email : '' }}</td>
