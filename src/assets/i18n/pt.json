@@ -105,7 +105,11 @@
     "success": "Logado com sucesso"
   },
   "seller": {
-    "name": "Vendedor"
+    "name": "Vendedor",
+    "user": "E-mail",
+    "active": "Status",
+    "createdDate": "Criado em",
+    "lastModifiedDate": "Atualizado em"
   },
   "user": {
     "listTitle": "Lista de Usuários",

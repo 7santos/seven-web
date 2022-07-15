@@ -1,0 +1,60 @@
+::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.mat-column-name,
+.mat-column-user {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 17% !important;
+  width: 17% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  border-right: 1px solid gainsboro;
+  padding: 5px;
+}
+
+.mat-column-active,
+.mat-column-createdDate,
+.mat-column-lastModifiedDate {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 17% !important;
+  width: 17% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  border-right: 1px solid gainsboro;
+  text-align: center;
+}
+
+.mat-column-config {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  text-align: center;
+}
+
+.mat-slide-toggle.mat-disabled {
+  opacity: 1 !important;
+}
