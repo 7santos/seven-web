@@ -107,11 +107,13 @@
   },
   "seller": {
     "name": "Vendedor",
-    "user": "E-mail",
+    "userEmail": "E-mail",
     "active": "Status",
     "createdDate": "Criado em",
     "lastModifiedDate": "Atualizado em",
-    "listTitle": "Lista de Vendedores"
+    "listTitle": "Lista de Vendedores",
+    "user": "Usuário",
+    "formTitle": "Salvar Vendedor"
   },
   "user": {
     "listTitle": "Lista de Usuários",

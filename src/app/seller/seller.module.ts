@@ -7,7 +7,7 @@ import {
   SellerFormComponent,
   SellerGridComponent,
 } from './components';
-import { SellerListComponent } from './containers';
+import { SellerCreationComponent, SellerListComponent } from './containers';
 
 export const SellerRoutes: Routes = [
   {
@@ -15,16 +15,16 @@ export const SellerRoutes: Routes = [
     canActivate: [AuthAdminGuard],
     component: SellerListComponent,
   },
-  /*{
+  {
     path: 'new',
     canActivate: [AuthAdminGuard],
-    component: UserCreationComponent,
+    component: SellerCreationComponent,
   },
   {
     path: ':id/edit',
     canActivate: [AuthAdminGuard],
-    component: UserCreationComponent,
-  },*/
+    component: SellerCreationComponent,
+  },
 ];
 
 @NgModule({
@@ -33,6 +33,7 @@ export const SellerRoutes: Routes = [
     SellerGridComponent,
     SellerListComponent,
     SellerFormComponent,
+    SellerCreationComponent,
   ],
   imports: [SharedModule, RouterModule.forChild(SellerRoutes)],
 })
