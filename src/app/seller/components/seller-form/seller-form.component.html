@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup" novalidate class="main-form">
+    <mat-form-field class="default-input-width">
+        <input matInput placeholder="{{ 'seller.name' | translate }}" formControlName="name" />
+    </mat-form-field>
+    <mat-form-field class="default-input-width">
+        <input matInput placeholder="{{ 'seller.user' | translate }}" formControlName="user" />
+    </mat-form-field>
+    <div>
+        <mat-slide-toggle formControlName="active" color="primary">
+            {{ "global.slideToggle." + formGroup.value.active | translate }}
+        </mat-slide-toggle>
+    </div>
+    <app-form-buttons [disabled]="formGroup.invalid" [link]="'/seller'" (save)="save($event)" class="margin-top-20">
+    </app-form-buttons>
+</form>

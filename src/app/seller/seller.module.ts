@@ -2,7 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from '@core';
 import { SharedModule } from '@shared';
-import { SellerFilterComponent, SellerGridComponent } from './components';
+import {
+  SellerFilterComponent,
+  SellerFormComponent,
+  SellerGridComponent,
+} from './components';
 import { SellerListComponent } from './containers';
 
 export const SellerRoutes: Routes = [
@@ -28,6 +32,7 @@ export const SellerRoutes: Routes = [
     SellerFilterComponent,
     SellerGridComponent,
     SellerListComponent,
+    SellerFormComponent,
   ],
   imports: [SharedModule, RouterModule.forChild(SellerRoutes)],
 })
