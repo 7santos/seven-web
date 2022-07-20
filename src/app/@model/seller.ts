@@ -6,7 +6,8 @@ export class Seller extends Prime<string> {
     lastModifiedDate: Date,
     id: string,
     public name: string,
-    public user: User,
+    public userId: string,
+    public userEmail: string,
     public active: boolean
   ) {
     super(createdDate, lastModifiedDate, id);

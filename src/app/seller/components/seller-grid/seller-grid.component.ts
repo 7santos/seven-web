@@ -17,7 +17,7 @@ export class SellerGridComponent extends BaseListDirective<
 > {
   displayedColumns: string[] = [
     'name',
-    'user',
+    'userEmail',
     'active',
     'createdDate',
     'lastModifiedDate',

@@ -113,7 +113,9 @@
     "lastModifiedDate": "Atualizado em",
     "listTitle": "Lista de Vendedores",
     "user": "Usuário",
-    "formTitle": "Salvar Vendedor"
+    "formTitle": "Salvar Vendedor",
+    "searchUser": "Buscar Usuário Por Nome",
+    "noEntriesFoundLabel": "Nenhuma opção encontrada"
   },
   "user": {
     "listTitle": "Lista de Usuários",

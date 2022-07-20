@@ -1,9 +1,30 @@
 <form [formGroup]="formGroup" novalidate class="main-form">
-    <mat-form-field class="default-input-width">
+    <mat-form-field class="default-input-width" *ngIf="!formGroup.value.userId">
         <input matInput placeholder="{{ 'seller.name' | translate }}" formControlName="name" />
+        <button mat-button *ngIf="formGroup.value.name" matSuffix mat-icon-button
+            matTooltip="{{ 'button.clear' | translate }}" (click)="clear('name')">
+            <mat-icon>close</mat-icon>
+        </button>
     </mat-form-field>
     <mat-form-field class="default-input-width">
-        <input matInput placeholder="{{ 'seller.user' | translate }}" formControlName="user" />
+        <mat-label>{{ 'seller.user' | translate }}</mat-label>
+        <mat-select #userSelect formControlName="userId" (selectionChange)="clear('name')">
+            <div (mouseleave)="userSelect.close()">
+                <mat-option>
+                    <ngx-mat-select-search ngModel [ngModelOptions]="{standalone: true}"
+                        (ngModelChange)="searchUser($event)" placeholderLabel="{{ 'seller.searchUser' | translate }}"
+                        noEntriesFoundLabel="{{ 'seller.noEntriesFoundLabel' | translate }}">
+                    </ngx-mat-select-search>
+                </mat-option>
+                <mat-option *ngFor="let user of (users$ | async)?.content" [value]="user.id">
+                    {{ user.name }}
+                </mat-option>
+            </div>
+        </mat-select>
+        <button mat-button *ngIf="formGroup.value.userId" matSuffix mat-icon-button
+            matTooltip="{{ 'button.clear' | translate }}" (click)="clear('userId')">
+            <mat-icon>close</mat-icon>
+        </button>
     </mat-form-field>
     <div>
         <mat-slide-toggle formControlName="active" color="primary">

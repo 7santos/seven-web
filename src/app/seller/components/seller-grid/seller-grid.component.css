@@ -6,7 +6,7 @@
 }
 
 .mat-column-name,
-.mat-column-user {
+.mat-column-userEmail {
   word-wrap: break-word !important;
   white-space: unset !important;
   flex: 0 0 17% !important;
