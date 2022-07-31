@@ -1,14 +1,12 @@
 import { Prime } from '@model';
 
-export class Seller extends Prime<string> {
+export class Group extends Prime<string> {
   constructor(
     createdDate: Date,
     lastModifiedDate: Date,
     id: string,
-    public name: string,
-    public userId: string,
-    public userEmail: string,
-    public active: boolean
+    public code: number,
+    public quotas: number[]
   ) {
     super(createdDate, lastModifiedDate, id);
   }
