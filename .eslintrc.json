@@ -1,7 +1,7 @@
 {
   "extends": ["plugin:json/recommended"],
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
+  "ignorePatterns": ["projects/**/*", "**/*.css"],
   "overrides": [
     {
       "files": ["*.ts"],

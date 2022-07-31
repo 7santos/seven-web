@@ -95,6 +95,10 @@
       "pageSuccess": "Sucesso ao salvar o ID do Usuário IG"
     }
   },
+  "group": {
+    "code": "Grupo",
+    "quota": "Cota"
+  },
   "home": {
     "title": "Home"
   },
