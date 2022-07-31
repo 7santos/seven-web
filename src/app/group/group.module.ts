@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from '@core';
 import { SharedModule } from '@shared';
 import { GroupFilterComponent, GroupGridComponent } from './components';
+import { GroupListComponent } from './containers';
 
 export const GroupRoutes: Routes = [
   {
@@ -23,7 +24,7 @@ export const GroupRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GroupFilterComponent, GroupGridComponent],
+  declarations: [GroupFilterComponent, GroupGridComponent, GroupListComponent],
   imports: [SharedModule, RouterModule.forChild(GroupRoutes)],
 })
 export class GroupModule {}

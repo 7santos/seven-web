@@ -99,7 +99,8 @@
     "code": "Grupo",
     "quota": "Cota",
     "createdDate": "Criado em",
-    "lastModifiedDate": "Atualizado em"
+    "lastModifiedDate": "Atualizado em",
+    "listTitle": "Lista de Grupos"
   },
   "home": {
     "title": "Home"
