@@ -1,26 +1,44 @@
-<mat-progress-bar mode="indeterminate" *ngIf="loaderService.getLoading() | async" color="accent"></mat-progress-bar>
+<mat-progress-bar
+  mode="indeterminate"
+  *ngIf="loaderService.getLoading() | async"
+  color="accent"
+></mat-progress-bar>
 <mat-toolbar color="primary" *ngIf="showHeader">
   <mat-toolbar-row>
     <!-- img src="assets/images/logo.png" class="logo" /-->
     <span translate>app.title</span>
     <button mat-icon-button *ngIf="permission.isAuthenticated">
-      <mat-icon (click)="sidenav.toggle()" matTooltip="{{ 'app.menu.tooltip' | translate }}" color="accent">
+      <mat-icon
+        (click)="sidenav.toggle()"
+        matTooltip="{{ 'app.menu.tooltip' | translate }}"
+        color="accent"
+      >
         menu
       </mat-icon>
     </button>
     <button mat-icon-button *ngIf="!permission.isAuthenticated">
-      <mat-icon matTooltip="{{ 'app.offline' | translate }}" color="accent">offline_bolt</mat-icon>
+      <mat-icon matTooltip="{{ 'app.offline' | translate }}" color="accent"
+        >offline_bolt</mat-icon
+      >
     </button>
     <span>{{ title }}</span>
     <span class="toolbar-spacer"></span>
     <span *ngIf="permission.isAuthenticated">{{ permission.username }}</span>
     <button mat-icon-button *ngIf="permission.isAuthenticated">
-      <mat-icon routerLink="/user/change-password" matTooltip="{{ 'app.changePassword' | translate }}" color="accent">
+      <mat-icon
+        routerLink="/user/change-password"
+        matTooltip="{{ 'app.changePassword' | translate }}"
+        color="accent"
+      >
         settings
       </mat-icon>
     </button>
     <button mat-icon-button *ngIf="permission.isAuthenticated">
-      <mat-icon (click)="logOut()" matTooltip="{{ 'app.logout' | translate }}" color="accent">
+      <mat-icon
+        (click)="logOut()"
+        matTooltip="{{ 'app.logout' | translate }}"
+        color="accent"
+      >
         exit_to_app
       </mat-icon>
     </button>
@@ -32,10 +50,18 @@
       <a mat-list-item (click)="navigate('/home')" *ngIf="permission.isUser">
         {{ "app.menu.home" | translate }}
       </a>
-      <a mat-list-item (click)="navigate('/facebook')" *ngIf="permission.isAdmin">
+      <a
+        mat-list-item
+        (click)="navigate('/facebook')"
+        *ngIf="permission.isAdmin"
+      >
         {{ "app.menu.facebook" | translate }}
       </a>
-      <a mat-list-item (click)="navigate('/access-data')" *ngIf="permission.isAdmin">
+      <a
+        mat-list-item
+        (click)="navigate('/access-data')"
+        *ngIf="permission.isAdmin"
+      >
         {{ "app.menu.accessData" | translate }}
       </a>
       <a mat-list-item (click)="navigate('/contact')" *ngIf="permission.isUser">
@@ -49,6 +75,9 @@
       </a>
       <a mat-list-item (click)="navigate('/seller')" *ngIf="permission.isAdmin">
         {{ "app.menu.seller" | translate }}
+      </a>
+      <a mat-list-item (click)="navigate('/group')" *ngIf="permission.isAdmin">
+        {{ "app.menu.group" | translate }}
       </a>
     </mat-nav-list>
   </mat-sidenav>

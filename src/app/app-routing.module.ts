@@ -42,6 +42,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./seller/seller.module').then((m) => m.SellerModule),
   },
+  {
+    path: 'group',
+    loadChildren: () =>
+      import('./group/group.module').then((m) => m.GroupModule),
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

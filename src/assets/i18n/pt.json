@@ -10,7 +10,8 @@
       "contact": "Contato",
       "user": "Usuários",
       "email": "E-mail",
-      "seller": "Vendedores"
+      "seller": "Vendedores",
+      "group": "Grupos & Cotas"
     },
     "offline": "Offline",
     "changePassword": "Alterar Senha"

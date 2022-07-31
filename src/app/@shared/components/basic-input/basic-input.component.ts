@@ -11,6 +11,16 @@ export class BasicInputComponent {
 
   @Input() inputFormControl: FormControl = new FormControl({});
 
+  @Input() biType: string = 'text';
+
+  @Input() biMin: string | number | null = 1;
+
+  @Input() biMax: string | number | null = 32767;
+
+  @Input() biStep: number = 1;
+
+  @Input() biPattern: string | RegExp = '\\d+';
+
   @Output() restart: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Output() search: EventEmitter<void> = new EventEmitter<void>();

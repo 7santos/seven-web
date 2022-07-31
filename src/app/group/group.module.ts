@@ -9,7 +9,7 @@ export const GroupRoutes: Routes = [
   {
     path: '',
     canActivate: [AuthAdminGuard],
-    // component: SellerListComponent,
+    component: GroupListComponent,
   },
   /*{
     path: 'new',

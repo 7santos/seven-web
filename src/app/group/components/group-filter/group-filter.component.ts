@@ -12,7 +12,7 @@ export class GroupFilterComponent
   extends BaseFilterDirective<GroupFilter>
   implements OnInit
 {
-  codeFormControl = new FormControl('', [Validators.min(1)]);
+  codeFormControl = new FormControl('');
 
   quotaFormControl = new FormControl('', [Validators.min(1)]);
 

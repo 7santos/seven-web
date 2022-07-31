@@ -14,6 +14,7 @@
     <mat-grid-list cols="2" rowHeight="75">
       <mat-grid-tile>
         <app-basic-input
+          [biType]="'number'"
           [placeholder]="'group.code'"
           [inputFormControl]="codeFormControl"
           (restart)="restart.next($event)"
@@ -24,6 +25,7 @@
       </mat-grid-tile>
       <mat-grid-tile>
         <app-basic-input
+          [biType]="'number'"
           [placeholder]="'group.quota'"
           [inputFormControl]="quotaFormControl"
           (restart)="restart.next($event)"

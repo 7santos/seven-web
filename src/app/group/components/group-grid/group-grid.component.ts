@@ -29,5 +29,10 @@ export class GroupGridComponent extends BaseListDirective<
     toastService: ToastService
   ) {
     super('group', router, matDialog, groupService, toastService);
+
+    this.defaultSort = {
+      active: 'code',
+      direction: 'asc',
+    };
   }
 }
