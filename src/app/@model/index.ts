@@ -31,6 +31,7 @@ export * from './facebook/login-status';
 export * from './facebook/facebook-page';
 
 export * from './filter/email-filter';
+export * from './filter/group-filter';
 export * from './filter/seller-filter';
 export * from './filter/user-filter';
 
