@@ -97,7 +97,9 @@
   },
   "group": {
     "code": "Grupo",
-    "quota": "Cota"
+    "quota": "Cota",
+    "createdDate": "Criado em",
+    "lastModifiedDate": "Atualizado em"
   },
   "home": {
     "title": "Home"
