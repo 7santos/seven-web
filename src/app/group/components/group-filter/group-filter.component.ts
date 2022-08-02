@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { GroupFilter } from '@model';
 import { BaseFilterDirective } from '@shared';
 
@@ -14,7 +14,7 @@ export class GroupFilterComponent
 {
   codeFormControl = new FormControl('');
 
-  quotaFormControl = new FormControl('', [Validators.min(1)]);
+  quotaFormControl = new FormControl('');
 
   constructor(private formBuilder: FormBuilder) {
     super();

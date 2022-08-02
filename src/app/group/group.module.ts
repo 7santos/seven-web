@@ -2,8 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from '@core';
 import { SharedModule } from '@shared';
-import { GroupFilterComponent, GroupGridComponent } from './components';
-import { GroupListComponent } from './containers';
+import {
+  GroupFilterComponent,
+  GroupFormComponent,
+  GroupGridComponent,
+} from './components';
+import { GroupCreationComponent, GroupListComponent } from './containers';
 
 export const GroupRoutes: Routes = [
   {
@@ -11,20 +15,26 @@ export const GroupRoutes: Routes = [
     canActivate: [AuthAdminGuard],
     component: GroupListComponent,
   },
-  /*{
+  {
     path: 'new',
     canActivate: [AuthAdminGuard],
-    component: SellerCreationComponent,
+    component: GroupCreationComponent,
   },
   {
     path: ':id/edit',
     canActivate: [AuthAdminGuard],
-    component: SellerCreationComponent,
-  },*/
+    component: GroupCreationComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [GroupFilterComponent, GroupGridComponent, GroupListComponent],
+  declarations: [
+    GroupFilterComponent,
+    GroupGridComponent,
+    GroupListComponent,
+    GroupFormComponent,
+    GroupCreationComponent,
+  ],
   imports: [SharedModule, RouterModule.forChild(GroupRoutes)],
 })
 export class GroupModule {}

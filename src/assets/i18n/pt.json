@@ -101,7 +101,9 @@
     "quota": "Cota",
     "createdDate": "Criado em",
     "lastModifiedDate": "Atualizado em",
-    "listTitle": "Lista de Grupos"
+    "listTitle": "Lista de Grupos",
+    "formTitle": "Salvar Grupo & Cotas",
+    "quotas": "Cotas"
   },
   "home": {
     "title": "Home"

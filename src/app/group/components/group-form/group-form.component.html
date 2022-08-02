@@ -1,0 +1,43 @@
+<form [formGroup]="formGroup" novalidate class="main-form">
+  <mat-form-field class="default-input-width">
+    <input
+      matInput
+      type="number"
+      min="1"
+      max="32767"
+      step="1"
+      pattern="\d+"
+      placeholder="{{ 'group.code' | translate }}"
+      formControlName="code"
+    />
+    <button
+      mat-button
+      *ngIf="formGroup.value.code"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('code')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <span class="default-input-width">
+    <label translate>group.quotas</label>
+    <ng-select
+      formControlName="quotas"
+      [items]="[]"
+      [multiple]="true"
+      [isOpen]="false"
+      [addTag]="addQuota"
+      [maxSelectedItems]="quotasLimit"
+    >
+    </ng-select>
+  </span>
+  <app-form-buttons
+    [disabled]="formGroup.invalid"
+    [link]="'/group'"
+    (save)="save($event)"
+    class="margin-top-20"
+  >
+  </app-form-buttons>
+</form>

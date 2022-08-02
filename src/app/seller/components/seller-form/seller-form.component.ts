@@ -66,10 +66,6 @@ export class SellerFormComponent
     );
   }
 
-  clear(path: string): void {
-    this.formGroup.get(path)?.reset();
-  }
-
   @Debounce(1000)
   searchUser(searchUserInput: string): void {
     if (!searchUserInput || searchUserInput.trim().length < 3) {
