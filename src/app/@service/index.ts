@@ -6,6 +6,7 @@ export * from './basic-api.service';
 export * from './contact.service';
 export * from './device.service';
 export * from './email.service';
+export * from './group.service';
 export * from './loader.service';
 export * from './me.service';
 export * from './page.service';

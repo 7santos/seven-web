@@ -17,4 +17,6 @@ export class AppConstants {
   public static LENGTH_3 = 3;
   public static LENGTH_250 = 250;
   public static LENGTH_320 = 320;
+
+  public static QUOTAS_LIMIT = 50;
 }

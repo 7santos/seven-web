@@ -7,6 +7,7 @@ export * from './confirm-dialog-data';
 export * from './contact-info';
 export * from './contact';
 export * from './email';
+export * from './group';
 export * from './jwt-payload';
 export * from './login';
 export * from './permission';
@@ -30,6 +31,7 @@ export * from './facebook/login-status';
 export * from './facebook/facebook-page';
 
 export * from './filter/email-filter';
+export * from './filter/group-filter';
 export * from './filter/seller-filter';
 export * from './filter/user-filter';
 

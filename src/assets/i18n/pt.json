@@ -10,7 +10,8 @@
       "contact": "Contato",
       "user": "Usuários",
       "email": "E-mail",
-      "seller": "Vendedores"
+      "seller": "Vendedores",
+      "group": "Grupos & Cotas"
     },
     "offline": "Offline",
     "changePassword": "Alterar Senha"
@@ -94,6 +95,15 @@
       "igUserId": "ID do Usuário IG",
       "pageSuccess": "Sucesso ao salvar o ID do Usuário IG"
     }
+  },
+  "group": {
+    "code": "Grupo",
+    "quota": "Cota",
+    "createdDate": "Criado em",
+    "lastModifiedDate": "Atualizado em",
+    "listTitle": "Lista de Grupos",
+    "formTitle": "Salvar Grupo & Cotas",
+    "quotas": "Cotas"
   },
   "home": {
     "title": "Home"

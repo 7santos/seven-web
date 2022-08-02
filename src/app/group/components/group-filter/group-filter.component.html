@@ -1,0 +1,47 @@
+<form [formGroup]="formGroup" novalidate>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title translate>
+        global.filters
+        <mat-icon
+          routerLink="/group/new"
+          matTooltip="{{ 'button.new' | translate }}"
+          color="primary"
+          >add
+        </mat-icon>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list cols="2" rowHeight="75">
+      <mat-grid-tile>
+        <app-basic-input
+          [biType]="'number'"
+          [placeholder]="'group.code'"
+          [inputFormControl]="codeFormControl"
+          (restart)="restart.next($event)"
+          (search)="filterSearch()"
+          (clear)="filterClear('code')"
+        >
+        </app-basic-input>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-basic-input
+          [biType]="'number'"
+          [placeholder]="'group.quota'"
+          [inputFormControl]="quotaFormControl"
+          (restart)="restart.next($event)"
+          (search)="filterSearch()"
+          (clear)="filterClear('quota')"
+        >
+        </app-basic-input>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <app-filter-buttons
+          [searchDisabled]="formGroup.invalid"
+          (search)="filterSearch()"
+          [link]="'/group/new'"
+        >
+        </app-filter-buttons>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</form>

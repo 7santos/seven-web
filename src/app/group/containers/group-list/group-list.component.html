@@ -1,0 +1,6 @@
+<app-group-filter
+  (restart)="gridComponent.reset($event)"
+  (search)="gridComponent.search()"
+  (valueChanges)="valueChanges($event)"
+></app-group-filter>
+<app-group-grid [value]="groupFilter"></app-group-grid>

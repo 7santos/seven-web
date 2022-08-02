@@ -1,6 +1,21 @@
 <mat-form-field class="default-input-width">
   <input
+    *ngIf="biType === 'text'"
     matInput
+    type="text"
+    placeholder="{{ placeholder | translate }}"
+    [formControl]="inputFormControl"
+    (input)="restart.next(true)"
+    (keydown.enter)="$event.preventDefault(); search.next()"
+  />
+  <input
+    *ngIf="biType === 'number'"
+    matInput
+    type="number"
+    min="{{ biMin }}"
+    max="{{ biMax }}"
+    step="{{ biStep }}"
+    pattern="{{ biPattern }}"
     placeholder="{{ placeholder | translate }}"
     [formControl]="inputFormControl"
     (input)="restart.next(true)"
