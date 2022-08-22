@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from '@core';
 import { SharedModule } from '@shared';
 import { ClientFilterComponent, ClientGridComponent } from './components';
+import { ClientListComponent } from './containers';
 
 export const ClientRoutes: Routes = [
   {
     path: '',
     canActivate: [AuthAdminGuard],
-    // component: SellerListComponent,
+    component: ClientListComponent,
   },
   /*{
     path: 'new',
@@ -23,7 +24,11 @@ export const ClientRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ClientFilterComponent, ClientGridComponent],
+  declarations: [
+    ClientFilterComponent,
+    ClientGridComponent,
+    ClientListComponent,
+  ],
   imports: [SharedModule, RouterModule.forChild(ClientRoutes)],
 })
 export class ClientModule {}

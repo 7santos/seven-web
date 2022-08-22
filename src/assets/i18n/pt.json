@@ -42,7 +42,8 @@
     "doc": "Documento Identificação",
     "birthDate": "Data Nascimento",
     "email": "E-mail",
-    "lastModifiedDate": "Atualizado em"
+    "lastModifiedDate": "Atualizado em",
+    "listTitle": "Lista de Clientes"
   },
   "contact": {
     "creation": {
