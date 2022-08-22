@@ -12,6 +12,7 @@ export class AppConstants {
     /^[a-zA-Z\\d_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z\\d.-]+$/gm;
 
   public static LENGTH_3 = 3;
+  public static LENGTH_14 = 14;
   public static LENGTH_250 = 250;
   public static LENGTH_320 = 320;
 

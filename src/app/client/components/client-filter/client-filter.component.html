@@ -1,0 +1,35 @@
+<form [formGroup]="formGroup" novalidate>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title translate>
+        global.filters
+        <mat-icon
+          routerLink="/client/new"
+          matTooltip="{{ 'button.new' | translate }}"
+          color="primary"
+          >add
+        </mat-icon>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-grid-list cols="1" rowHeight="75">
+      <mat-grid-tile>
+        <app-basic-input
+          [placeholder]="'client.search'"
+          [inputFormControl]="searchFormControl"
+          (restart)="restart.next($event)"
+          (search)="filterSearch()"
+          (clear)="filterClear('search')"
+        >
+        </app-basic-input>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-filter-buttons
+          [searchDisabled]="formGroup.invalid"
+          (search)="filterSearch()"
+          [link]="'/client/new'"
+        >
+        </app-filter-buttons>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</form>

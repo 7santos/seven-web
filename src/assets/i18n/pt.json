@@ -32,6 +32,9 @@
     "createdDate": "Data de Criação",
     "lastModifiedDate": "Data de Ùltima Modificação"
   },
+  "client": {
+    "search": "Pesquisar"
+  },
   "contact": {
     "creation": {
       "title": "Contato",
