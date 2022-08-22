@@ -33,7 +33,16 @@
     "lastModifiedDate": "Data de Ùltima Modificação"
   },
   "client": {
-    "search": "Pesquisar"
+    "search": "Pesquisar",
+    "name": "Nome",
+    "phone": "Telefone",
+    "cellPhone": "Celular",
+    "cpf": "CPF",
+    "cnpj": "CNPJ",
+    "doc": "Documento Identificação",
+    "birthDate": "Data Nascimento",
+    "email": "E-mail",
+    "lastModifiedDate": "Atualizado em"
   },
   "contact": {
     "creation": {
