@@ -27,9 +27,12 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ClipboardModule } from 'ngx-clipboard';
 import {
+  AddressComponent,
   BasicInputComponent,
   BasicSelectComponent,
+  CellPhoneComponent,
   ConfirmDialogComponent,
+  DocComponent,
   FilterButtonsComponent,
   FilterStatusComponent,
   FormButtonsComponent,
@@ -94,9 +97,12 @@ export const exportModules = [
 ];
 
 export const components = [
+  AddressComponent,
   BasicInputComponent,
   BasicSelectComponent,
+  CellPhoneComponent,
   ConfirmDialogComponent,
+  DocComponent,
   FilterButtonsComponent,
   FilterStatusComponent,
   FormButtonsComponent,

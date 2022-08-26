@@ -53,3 +53,19 @@ mat-radio-button {
 .margin-top-20 {
   margin-top: 20px;
 }
+
+.icon-16 {
+  width: 16px;
+}
+
+.margin-left-5 {
+  margin-left: 5px;
+}
+
+.primary {
+  color: #120a8f;
+}
+
+.bold {
+  font-weight: bold;
+}

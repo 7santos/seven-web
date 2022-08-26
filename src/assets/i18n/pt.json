@@ -11,14 +11,25 @@
       "user": "Usuários",
       "email": "E-mail",
       "seller": "Vendedores",
-      "group": "Grupos & Cotas"
+      "group": "Grupos & Cotas",
+      "client": "Clientes"
     },
     "offline": "Offline",
     "changePassword": "Alterar Senha"
   },
   "shared": {
     "confirmMsg": "Tem certeza de que deseja excluir?",
-    "deleteSuccess": "{{ name }} com ID '{{ id }}' removido com sucesso"
+    "deleteSuccess": "{{ name }} com ID '{{ id }}' removido com sucesso",
+    "address": {
+      "title": "Endereço",
+      "cep": "CEP",
+      "street": "Logradouro",
+      "complement": "Complemento",
+      "district": "Bairro",
+      "city": "Cidade",
+      "state": "Estado",
+      "number": "Número"
+    }
   },
   "accessData": {
     "title": "Dados de Acesso",
@@ -43,7 +54,8 @@
     "birthDate": "Data Nascimento",
     "email": "E-mail",
     "lastModifiedDate": "Atualizado em",
-    "listTitle": "Lista de Clientes"
+    "listTitle": "Lista de Clientes",
+    "address": "Endereço"
   },
   "contact": {
     "creation": {
@@ -183,6 +195,17 @@
     "filters": "Filtros",
     "edit": "Editar",
     "delete": "Excluir",
-    "noData": "Sem dados"
+    "noData": "Sem dados",
+    "whatsapp": "WhatsApp"
+  },
+  "enums": {
+    "docType": {
+      "RG": "RG",
+      "RNE": "RNE",
+      "CNH": "CNH",
+      "PASSPORT": "Passaporte",
+      "CTPS": "CTPS",
+      "null": ""
+    }
   }
 }
