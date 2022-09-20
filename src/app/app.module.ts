@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from '@core';
@@ -7,6 +9,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppService } from '@service';
 import { SharedModule } from '@shared';
+import { AppConstants } from './app-constants';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -33,7 +36,14 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     // Must be imported as the last module as it contains the fallback route
     AppRoutingModule,
   ],
-  providers: [AppService],
+  providers: [
+    AppService,
+    { provide: MAT_DATE_LOCALE, useValue: AppConstants.DEFAULT_LOCALE },
+    {
+      provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+      useValue: { useUtc: true, strict: true },
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

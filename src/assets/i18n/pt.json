@@ -55,7 +55,20 @@
     "email": "E-mail",
     "lastModifiedDate": "Atualizado em",
     "listTitle": "Lista de Clientes",
-    "address": "Endereço"
+    "address": "Endereço",
+    "formTitle": "Salvar Cliente",
+    "whatsapp": "WhatsApp",
+    "docType": "Tipo Documento",
+    "addressValues": {
+      "cep": "CEP",
+      "street": "Logradouro",
+      "complement": "Complemento",
+      "district": "Bairro",
+      "city": "Cidade",
+      "state": "Estado",
+      "number": "Número"
+    },
+    "observation": "Comentário"
   },
   "contact": {
     "creation": {
@@ -179,7 +192,8 @@
     "clear": "Apagar",
     "search": "Pesquisar",
     "new": "Novo",
-    "back": "Voltar"
+    "back": "Voltar",
+    "cep": "Pesquisar Endereço"
   },
   "global": {
     "slideToggle": {
@@ -196,7 +210,11 @@
     "edit": "Editar",
     "delete": "Excluir",
     "noData": "Sem dados",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "yesOrNo": {
+      "true": "Sim",
+      "false": "Não"
+    }
   },
   "enums": {
     "docType": {

@@ -9,7 +9,7 @@ import { Subject, takeUntil } from 'rxjs';
 export abstract class BaseFormDirective<E extends Prime<ID>, F, ID>
   implements OnInit, OnDestroy
 {
-  private unsubscribe$ = new Subject<void>();
+  protected unsubscribe$ = new Subject<void>();
 
   formGroup: FormGroup = new FormGroup({});
 

@@ -2,8 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from '@core';
 import { SharedModule } from '@shared';
-import { ClientFilterComponent, ClientGridComponent } from './components';
-import { ClientListComponent } from './containers';
+import {
+  ClientFilterComponent,
+  ClientFormComponent,
+  ClientGridComponent,
+} from './components';
+import { ClientCreationComponent, ClientListComponent } from './containers';
 
 export const ClientRoutes: Routes = [
   {
@@ -11,16 +15,16 @@ export const ClientRoutes: Routes = [
     canActivate: [AuthAdminGuard],
     component: ClientListComponent,
   },
-  /*{
+  {
     path: 'new',
     canActivate: [AuthAdminGuard],
-    component: SellerCreationComponent,
+    component: ClientCreationComponent,
   },
   {
     path: ':id/edit',
     canActivate: [AuthAdminGuard],
-    component: SellerCreationComponent,
-  },*/
+    component: ClientCreationComponent,
+  },
 ];
 
 @NgModule({
@@ -28,6 +32,8 @@ export const ClientRoutes: Routes = [
     ClientFilterComponent,
     ClientGridComponent,
     ClientListComponent,
+    ClientFormComponent,
+    ClientCreationComponent,
   ],
   imports: [SharedModule, RouterModule.forChild(ClientRoutes)],
 })

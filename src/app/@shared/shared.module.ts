@@ -44,6 +44,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppDatePipe } from './pipes';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgxMaskModule } from 'ngx-mask';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 export const importModules = [
   CommonModule,
@@ -60,6 +62,8 @@ export const importModules = [
   ClipboardModule,
   MatChipsModule,
   MatSelectModule,
+  NgxMaskModule.forRoot(),
+  MatMomentDateModule,
 ];
 
 export const exportModules = [
@@ -94,6 +98,7 @@ export const exportModules = [
   MatProgressBarModule,
   NgxMatSelectSearchModule,
   NgSelectModule,
+  NgxMaskModule,
 ];
 
 export const components = [

@@ -9,6 +9,7 @@ export * from './confirm-dialog-data';
 export * from './contact-info';
 export * from './contact';
 export * from './email';
+export * from './enum-value';
 export * from './group';
 export * from './jwt-payload';
 export * from './login';

@@ -8,6 +8,7 @@ export * from './client.service';
 export * from './contact.service';
 export * from './device.service';
 export * from './email.service';
+export * from './enum.service';
 export * from './group.service';
 export * from './loader.service';
 export * from './me.service';
