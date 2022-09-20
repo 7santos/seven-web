@@ -1,0 +1,4 @@
+.doc-container {
+  display: flex;
+  justify-content: left;
+}

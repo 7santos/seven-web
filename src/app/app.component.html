@@ -79,6 +79,9 @@
       <a mat-list-item (click)="navigate('/group')" *ngIf="permission.isAdmin">
         {{ "app.menu.group" | translate }}
       </a>
+      <a mat-list-item (click)="navigate('/client')" *ngIf="permission.isAdmin">
+        {{ "app.menu.client" | translate }}
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

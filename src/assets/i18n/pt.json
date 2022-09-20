@@ -11,14 +11,25 @@
       "user": "Usuários",
       "email": "E-mail",
       "seller": "Vendedores",
-      "group": "Grupos & Cotas"
+      "group": "Grupos & Cotas",
+      "client": "Clientes"
     },
     "offline": "Offline",
     "changePassword": "Alterar Senha"
   },
   "shared": {
     "confirmMsg": "Tem certeza de que deseja excluir?",
-    "deleteSuccess": "{{ name }} com ID '{{ id }}' removido com sucesso"
+    "deleteSuccess": "{{ name }} com ID '{{ id }}' removido com sucesso",
+    "address": {
+      "title": "Endereço",
+      "cep": "CEP",
+      "street": "Logradouro",
+      "complement": "Complemento",
+      "district": "Bairro",
+      "city": "Cidade",
+      "state": "Estado",
+      "number": "Número"
+    }
   },
   "accessData": {
     "title": "Dados de Acesso",
@@ -31,6 +42,33 @@
     "igUserId": "ID do Usuário IG",
     "createdDate": "Data de Criação",
     "lastModifiedDate": "Data de Ùltima Modificação"
+  },
+  "client": {
+    "search": "Pesquisar",
+    "name": "Nome",
+    "phone": "Telefone",
+    "cellPhone": "Celular",
+    "cpf": "CPF",
+    "cnpj": "CNPJ",
+    "doc": "Documento Identificação",
+    "birthDate": "Data Nascimento",
+    "email": "E-mail",
+    "lastModifiedDate": "Atualizado em",
+    "listTitle": "Lista de Clientes",
+    "address": "Endereço",
+    "formTitle": "Salvar Cliente",
+    "whatsapp": "WhatsApp",
+    "docType": "Tipo Documento",
+    "addressValues": {
+      "cep": "CEP",
+      "street": "Logradouro",
+      "complement": "Complemento",
+      "district": "Bairro",
+      "city": "Cidade",
+      "state": "Estado",
+      "number": "Número"
+    },
+    "observation": "Comentário"
   },
   "contact": {
     "creation": {
@@ -154,7 +192,8 @@
     "clear": "Apagar",
     "search": "Pesquisar",
     "new": "Novo",
-    "back": "Voltar"
+    "back": "Voltar",
+    "cep": "Pesquisar Endereço"
   },
   "global": {
     "slideToggle": {
@@ -170,6 +209,21 @@
     "filters": "Filtros",
     "edit": "Editar",
     "delete": "Excluir",
-    "noData": "Sem dados"
+    "noData": "Sem dados",
+    "whatsapp": "WhatsApp",
+    "yesOrNo": {
+      "true": "Sim",
+      "false": "Não"
+    }
+  },
+  "enums": {
+    "docType": {
+      "RG": "RG",
+      "RNE": "RNE",
+      "CNH": "CNH",
+      "PASSPORT": "Passaporte",
+      "CTPS": "CTPS",
+      "null": ""
+    }
   }
 }

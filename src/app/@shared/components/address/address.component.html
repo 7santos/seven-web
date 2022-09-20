@@ -1,0 +1,20 @@
+<h2 mat-dialog-title translate>shared.address.title</h2>
+<mat-dialog-content class="mat-typography">
+  <span class="bold" translate>shared.address.cep</span>
+  <p>{{ address.cep }}</p>
+  <span class="bold" translate>shared.address.street</span>
+  <p>{{ address.street }}</p>
+  <span class="bold" translate>shared.address.complement</span>
+  <p>{{ address.complement }}</p>
+  <span class="bold" translate>shared.address.district</span>
+  <p>{{ address.district }}</p>
+  <span class="bold" translate>shared.address.city</span>
+  <p>{{ address.city }}</p>
+  <span class="bold" translate>shared.address.state</span>
+  <p>{{ address.state.name }}</p>
+  <span class="bold" translate>shared.address.number</span>
+  <p>{{ address.number }}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ "button.close" | translate }}</button>
+</mat-dialog-actions>

@@ -1,0 +1,380 @@
+<form [formGroup]="formGroup" novalidate class="main-form">
+  <!-- NAME -->
+  <mat-form-field class="default-input-width">
+    <input
+      matInput
+      placeholder="{{ 'client.name' | translate }}"
+      formControlName="name"
+    />
+    <button
+      mat-button
+      *ngIf="formGroup.value.name"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('name')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-- PHONE -->
+  <mat-form-field class="default-input-width">
+    <input
+      matInput
+      placeholder="{{ 'client.phone' | translate }}"
+      formControlName="phone"
+      mask="(00) 0000-0000"
+      [dropSpecialCharacters]="false"
+    />
+    <button
+      mat-button
+      *ngIf="formGroup.value.phone"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('phone')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-- CELL PHONE -->
+  <mat-form-field class="default-input-width">
+    <input
+      matInput
+      placeholder="{{ 'client.cellPhone' | translate }}"
+      formControlName="cellPhone"
+      mask="(00) 00000-0000"
+      [dropSpecialCharacters]="false"
+    />
+    <button
+      mat-button
+      *ngIf="formGroup.value.cellPhone"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('cellPhone')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-- WHATS APP -->
+  <div>
+    <mat-label translate>client.whatsapp</mat-label>
+    <img
+      class="icon-16 margin-left-5"
+      src="assets/images/whatsapp.png"
+      alt="{{ 'global.whatsapp' | translate }}"
+      matTooltip="{{ 'global.whatsapp' | translate }}"
+    />
+    <mat-slide-toggle
+      formControlName="whatsapp"
+      color="primary"
+      class="margin-left-5"
+    >
+      {{ "global.yesOrNo." + formGroup.value.whatsapp | translate }}
+    </mat-slide-toggle>
+  </div>
+  <!-- CPF -->
+  <mat-form-field class="default-input-width">
+    <input
+      matInput
+      placeholder="{{ 'client.cpf' | translate }}"
+      formControlName="cpf"
+      mask="000.000.000-00"
+      [dropSpecialCharacters]="false"
+    />
+    <button
+      mat-button
+      *ngIf="formGroup.value.cpf"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('cpf')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-- CNPJ -->
+  <mat-form-field class="default-input-width">
+    <input
+      matInput
+      placeholder="{{ 'client.cnpj' | translate }}"
+      formControlName="cnpj"
+      mask="00.000.000/0000-00"
+      [dropSpecialCharacters]="false"
+    />
+    <button
+      mat-button
+      *ngIf="formGroup.value.cnpj"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('cnpj')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-- DOC -->
+  <mat-form-field class="default-input-width">
+    <input
+      matInput
+      placeholder="{{ 'client.doc' | translate }}"
+      formControlName="doc"
+    />
+    <button
+      mat-button
+      *ngIf="formGroup.value.doc"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('doc')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-- DOC TYPE -->
+  <mat-form-field class="default-input-width">
+    <mat-label translate>client.docType</mat-label>
+    <mat-select formControlName="docType">
+      <mat-option *ngFor="let docType of docTypes" [value]="docType.id">
+        {{ docType.value }}
+      </mat-option>
+    </mat-select>
+    <button
+      mat-button
+      *ngIf="formGroup.value.docType"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('docType')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-- BIRTH DATE -->
+  <mat-form-field class="default-input-width">
+    <mat-label translate>client.birthDate</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      formControlName="birthDate"
+      readonly
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker disabled="false"></mat-datepicker>
+    <button
+      mat-button
+      *ngIf="formGroup.value.birthDate"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('birthDate')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-- EMAIL -->
+  <mat-form-field class="default-input-width">
+    <input
+      matInput
+      placeholder="{{ 'client.email' | translate }}"
+      formControlName="email"
+    />
+    <button
+      mat-button
+      *ngIf="formGroup.value.email"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('email')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-- ADDRESS FILLED -->
+  <div>
+    <mat-label translate>client.address</mat-label>
+    <mat-slide-toggle
+      formControlName="addressFilled"
+      color="primary"
+      class="margin-left-5"
+    >
+      {{ "global.yesOrNo." + formGroup.value.addressFilled | translate }}
+    </mat-slide-toggle>
+  </div>
+  <!-- ADDRESS -->
+  <div
+    formGroupName="address"
+    class="main-form"
+    *ngIf="formGroup.value.addressFilled"
+  >
+    <!-- CEP -->
+    <mat-form-field class="default-input-width">
+      <input
+        matInput
+        placeholder="{{ 'client.addressValues.cep' | translate }}"
+        formControlName="cep"
+        mask="00000-000"
+        [dropSpecialCharacters]="false"
+      />
+      <button
+        mat-button
+        *ngIf="
+          formGroup.value.address.cep && formGroup.get('address.cep')?.valid
+        "
+        matSuffix
+        mat-icon-button
+        matTooltip="{{ 'button.cep' | translate }}"
+        (click)="getAddress()"
+        color="primary"
+      >
+        <mat-icon>local_post_office</mat-icon>
+      </button>
+      <button
+        mat-button
+        *ngIf="formGroup.value.address.cep"
+        matSuffix
+        mat-icon-button
+        matTooltip="{{ 'button.clear' | translate }}"
+        (click)="clear('address.cep')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-- STREET -->
+    <mat-form-field class="default-input-width">
+      <input
+        matInput
+        placeholder="{{ 'client.addressValues.street' | translate }}"
+        formControlName="street"
+      />
+      <button
+        mat-button
+        *ngIf="formGroup.value.address.street"
+        matSuffix
+        mat-icon-button
+        matTooltip="{{ 'button.clear' | translate }}"
+        (click)="clear('address.street')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-- COMPLEMENT -->
+    <mat-form-field class="default-input-width">
+      <input
+        matInput
+        placeholder="{{ 'client.addressValues.complement' | translate }}"
+        formControlName="complement"
+      />
+      <button
+        mat-button
+        *ngIf="formGroup.value.address.complement"
+        matSuffix
+        mat-icon-button
+        matTooltip="{{ 'button.clear' | translate }}"
+        (click)="clear('address.complement')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-- DISTRICT -->
+    <mat-form-field class="default-input-width">
+      <input
+        matInput
+        placeholder="{{ 'client.addressValues.district' | translate }}"
+        formControlName="district"
+      />
+      <button
+        mat-button
+        *ngIf="formGroup.value.address.district"
+        matSuffix
+        mat-icon-button
+        matTooltip="{{ 'button.clear' | translate }}"
+        (click)="clear('address.district')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-- CITY -->
+    <mat-form-field class="default-input-width">
+      <input
+        matInput
+        placeholder="{{ 'client.addressValues.city' | translate }}"
+        formControlName="city"
+      />
+      <button
+        mat-button
+        *ngIf="formGroup.value.address.city"
+        matSuffix
+        mat-icon-button
+        matTooltip="{{ 'button.clear' | translate }}"
+        (click)="clear('address.city')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-- STATE -->
+    <mat-form-field class="default-input-width">
+      <mat-label translate>client.addressValues.state</mat-label>
+      <mat-select formControlName="state" [compareWith]="stateCompare">
+        <mat-option *ngFor="let state of states" [value]="state">
+          {{ state.name }}
+        </mat-option>
+      </mat-select>
+      <button
+        mat-button
+        *ngIf="formGroup.value.address.state"
+        matSuffix
+        mat-icon-button
+        matTooltip="{{ 'button.clear' | translate }}"
+        (click)="clear('address.state')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-- CITY -->
+    <mat-form-field class="default-input-width">
+      <input
+        matInput
+        placeholder="{{ 'client.addressValues.number' | translate }}"
+        formControlName="number"
+      />
+      <button
+        mat-button
+        *ngIf="formGroup.value.address.number"
+        matSuffix
+        mat-icon-button
+        matTooltip="{{ 'button.clear' | translate }}"
+        (click)="clear('address.number')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <!-- OBSERVATION -->
+  <mat-form-field class="default-input-width">
+    <textarea
+      matInput
+      placeholder="{{ 'client.observation' | translate }}"
+      formControlName="observation"
+      rows="5"
+    ></textarea>
+    <button
+      mat-button
+      *ngIf="formGroup.value.observation"
+      matSuffix
+      mat-icon-button
+      matTooltip="{{ 'button.clear' | translate }}"
+      (click)="clear('observation')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <app-form-buttons
+    [disabled]="formGroup.invalid"
+    [link]="'/client'"
+    (save)="save($event)"
+    class="margin-top-20 margin-bottom-10"
+  >
+  </app-form-buttons>
+</form>
